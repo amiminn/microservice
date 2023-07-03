@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .card {
+        @apply w-full border-2 border-gray-200 border-dashed rounded-lg;
+    }
+    .card-body {
+        @apply p-4;
+    }
+}
