@@ -10,11 +10,8 @@
 
 <body id="app">
     <div>
-
         @include('components.header')
-
         @include('components.sidebar')
-
         <div class="p-4 sm:ml-64">
             <div class="mt-14">
                 <router-view />

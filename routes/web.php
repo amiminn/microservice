@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('login', function () {
+    return view('layouts.login');
+});
+
 Route::get('{path}', function () {
     return view('layouts.app');
 })->where('path', '(.*)');
