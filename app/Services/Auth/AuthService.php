@@ -54,4 +54,27 @@ class AuthService
         // Auth::logout();
         return Response::failed('Berhasil logout.');
     }
+
+    public static function resetPassword($request)
+    {
+        try {
+            // send email with token
+            return Response::success("silahkan cek email untuk mereset ulang password.");
+        } catch (\Throwable $th) {
+            return Response::failed($th->getMessage());
+        }
+    }
+
+    public static function ubahPassword($request)
+    {
+        try {
+            // ubah password baru
+            UserModel::where("id", Auth::user()->id)->update([
+                "password" => $request["password"]
+            ]);
+            return Response::success("password baru berhasil diterapkan.");
+        } catch (\Throwable $th) {
+            return Response::failed($th->getMessage());
+        }
+    }
 }

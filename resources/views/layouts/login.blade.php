@@ -10,11 +10,11 @@
 </head>
 
 <body>
-    <div class="card">
+    {{-- <div class="card">
         <div class="card-body">
             login
         </div>
-    </div>
+    </div> --}}
 </body>
 
 </html>

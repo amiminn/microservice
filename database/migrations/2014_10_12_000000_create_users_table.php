@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('balance')->default(0);
             $table->integer('isActive')->default(0);
             $table->text('token')->nullable();
+            $table->json('detail')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

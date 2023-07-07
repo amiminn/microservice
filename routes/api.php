@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Api\Auth\AuthContoller;
 use App\Models\UserModel;
+use App\Services\PG\JokulService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +16,7 @@ Route::prefix('auth')->group(function () {
 });
 
 Route::get('/', function (Request $request) {
-    return UserModel::get();
+    return JokulService::hit_doku();
 });
 
 Route::post('/del', function (Request $request) {

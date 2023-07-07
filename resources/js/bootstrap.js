@@ -4,9 +4,10 @@
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 import "flowbite";
-import feather from "feather-icons";
-feather.icons.x;
-feather.replace();
+
+import swal from "sweetalert2";
+window.Swal = swal;
+
 import axios from "axios";
 window.axios = axios;
 

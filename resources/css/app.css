@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @layer components {
+    .router-link-active,
+    .router-link-exact-active {
+        @apply !text-rose-800 bg-gray-50;
+    }
     .card {
-        @apply w-full border-2 border-gray-200 border-dashed rounded-lg;
+        @apply my-2 w-full border-2 border-gray-200 border-dashed rounded-lg;
     }
     .card-body {
         @apply p-4;

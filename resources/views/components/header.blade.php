@@ -15,7 +15,7 @@ $pages = [
                     type="button"
                     class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
                     <span class="sr-only">Open sidebar</span>
-                    <i data-feather="align-left"></i>
+                    <vue-feather type="align-left"></vue-feather>
                 </button>
                 <div class="flex ml-2 md:mr-24">
                     <div class="h-8 mr-3 text-2xl">🌱</div>
@@ -52,7 +52,8 @@ $pages = [
                             </li>
                             @endforeach
                             <li>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:rounded-b hover:bg-rose-300"
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:rounded-b hover:bg-rose-300"
                                     role="menuitem">Sign out</a>
                             </li>
                         </ul>
