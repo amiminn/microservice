@@ -19,8 +19,9 @@ $pages = [
                 </button>
                 <div class="flex ml-2 md:mr-24">
                     <div class="h-8 mr-3 text-2xl">🌱</div>
-                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap">{{
-                        env("APP_NAME")}}</span>
+                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap">
+                        <platform />
+                    </span>
                 </div>
             </div>
             <div class="flex items-center">

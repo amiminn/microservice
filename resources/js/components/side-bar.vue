@@ -46,7 +46,13 @@ export default {
                 {
                     path: "/tailwind",
                     name: "tailwind-component",
-                    logo: "book",
+                    logo: "box",
+                    sp: "",
+                },
+                {
+                    path: "/kesehatan",
+                    name: "kesehatan",
+                    logo: "heart",
                     sp: "",
                 },
                 {

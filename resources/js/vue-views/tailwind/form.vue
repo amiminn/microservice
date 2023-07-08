@@ -9,7 +9,7 @@
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <div>
-                            <label class="label">Your email</label>
+                            <div class="label">Your email</div>
                             <input
                                 type="text"
                                 value="form input"
@@ -20,7 +20,7 @@
                     <div>.form-input</div>
                     <div>
                         <div>
-                            <label class="label">username</label>
+                            <div class="label">username</div>
                             <input
                                 type="text"
                                 disabled
@@ -31,7 +31,7 @@
                     </div>
                     <div>.form-input disabled</div>
                     <div>
-                        <label class="label">Your Email</label>
+                        <div class="label">Your Email</div>
                         <div class="relative">
                             <div class="header-icon">
                                 <vue-feather type="mail"></vue-feather>
@@ -45,12 +45,12 @@
                     </div>
                     <div>.header-icon .form-icon</div>
                     <div>
-                        <label class="label">upload image</label>
+                        <div class="label">upload image</div>
                         <input type="file" class="form-file" />
                     </div>
                     <div>.form-file</div>
                     <div>
-                        <label class="label">choose country</label>
+                        <div class="label">choose country</div>
                         <select class="form-input">
                             <option selected>Choose a country</option>
                             <option value="US">United States</option>
@@ -67,7 +67,7 @@
                                 class="material-input peer"
                                 placeholder=" "
                             />
-                            <label class="material-label">material</label>
+                            <div class="material-label">material</div>
                         </div>
                     </div>
                     <div>.material-input .material-label</div>

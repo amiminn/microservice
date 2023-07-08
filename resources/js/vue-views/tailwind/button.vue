@@ -7,23 +7,29 @@
                 </div>
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <button class="btn btn-primary">primary</button>
+                        <button type="button" class="btn btn-primary">
+                            primary
+                        </button>
                     </div>
                     <div>.btn.btn-primary</div>
                     <div>
-                        <button class="btn btn-success">success</button>
+                        <button type="button" class="btn btn-success">
+                            success
+                        </button>
                     </div>
                     <div>.btn.btn-success</div>
                     <div>
-                        <button class="btn btn-sky">sky</button>
+                        <button type="button" class="btn btn-sky">sky</button>
                     </div>
                     <div>.btn.btn-sky</div>
                     <div>
-                        <button class="btn btn-dark">dark</button>
+                        <button type="button" class="btn btn-dark">dark</button>
                     </div>
                     <div>.btn.btn-dark</div>
                     <div>
-                        <button class="btn btn-danger btn-block">danger</button>
+                        <button type="button" class="btn btn-danger btn-block">
+                            danger
+                        </button>
                     </div>
                     <div>.btn.btn-danger.btn-block</div>
                 </div>

@@ -1,23 +1,35 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../vue-views/index.vue";
-import About from "../vue-views/about.vue";
-import Profile from "../vue-views/profile/profile.vue";
 
 const routes = [
     {
         path: "/",
         name: "home",
-        component: Home,
+        component: () => import("../vue-views/dashboard/dashboard.vue"),
     },
     {
         path: "/about",
         name: "about",
-        component: About,
+        component: () => import("../vue-views/about.vue"),
     },
     {
         path: "/profile",
         name: "profile",
-        component: Profile,
+        component: () => import("../vue-views/profile/profile.vue"),
+    },
+    {
+        path: "/client",
+        name: "client",
+        component: () => import("../vue-views/client/client.vue"),
+    },
+    {
+        path: "/basic-vue",
+        name: "basic-vue",
+        component: () => import("../vue-views/vue/learnvue.vue"),
+    },
+    {
+        path: "/kesehatan",
+        name: "kesehatan",
+        component: () => import("../vue-views/kesehatan/kesehatan.vue"),
     },
     {
         path: "/tailwind",
