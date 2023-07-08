@@ -2,7 +2,9 @@ import "./bootstrap";
 import VueFeather from "vue-feather";
 import { createApp } from "vue/dist/vue.esm-bundler.js";
 import router from "./router";
-import SideBar from "./vue-views/components/side-bar.vue";
+import SideBar from "./components/side-bar.vue";
+import store from "./store/index.js";
+
 const app = createApp({
     components: {
         SideBar,
@@ -12,7 +14,8 @@ const app = createApp({
 app.component(VueFeather.name, VueFeather);
 
 app.use(router);
-app.mount("#app");
+
+app.use(store);
 
 app.config.globalProperties.$filters = {
     currencyUSD(value) {
@@ -27,5 +30,6 @@ app.config.globalProperties.$filters = {
     },
 };
 
-// variable
 app.config.globalProperties.$var = "ini variable global";
+
+app.mount("#app");

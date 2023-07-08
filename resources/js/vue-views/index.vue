@@ -5,6 +5,8 @@
                 <h1>home {{ $var }}</h1>
                 <p>{{ $filters.currencyIDR(2000) }}</p>
                 {{ ex }}
+                <br /><br />
+                store: {{ this.$store.state.count }}
             </div>
         </div>
         <Child :message="ex" @clicked="onChild" @arg="nameHome" />

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="btn btn-sm" @click="kembali">
+        <button class="btn btn-primary" @click="kembali">
             <i class="fa fa-chevron-left" aria-hidden="true"></i>
             Kembali
         </button>

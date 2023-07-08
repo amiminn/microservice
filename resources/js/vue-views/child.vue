@@ -12,7 +12,7 @@
         </div>
         <div class="card">
             <div class="card-body">
-                <input type="text" @input="getInput" />
+                <input type="text" @input="getInput" class="form-input" />
             </div>
         </div>
     </div>
@@ -30,7 +30,6 @@ export default {
             this.$emit("clicked", "halo dek,.");
         },
         getInput(e) {
-            // this.text = e.target.value;
             this.$emit("arg", e.target.value);
         },
     },

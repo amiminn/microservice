@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +16,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('login', function () {
     return view('layouts.login');
-});
+})->name('login');
 
+Route::post('login', function (Request $request) {
+    return $request;
+})->name('to-login');
+
+
+// Route::middleware(['auth'])->group(function () {
 Route::get('{path}', function () {
     return view('layouts.app');
 })->where('path', '(.*)');
+// });

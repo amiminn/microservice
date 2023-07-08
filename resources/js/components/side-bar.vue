@@ -43,6 +43,18 @@ export default {
                     logo: "book-open",
                     sp: "new",
                 },
+                {
+                    path: "/tailwind",
+                    name: "tailwind-component",
+                    logo: "book",
+                    sp: "",
+                },
+                {
+                    path: "/client",
+                    name: "client",
+                    logo: "key",
+                    sp: "",
+                },
             ],
         };
     },

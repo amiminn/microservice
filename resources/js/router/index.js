@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../vue-views/index.vue";
 import About from "../vue-views/about.vue";
 import Profile from "../vue-views/profile/profile.vue";
-import Basic from "../vue-views/basic/basic.vue";
 
 const routes = [
     {
@@ -21,14 +20,14 @@ const routes = [
         component: Profile,
     },
     {
-        path: "/basic-vue",
-        name: "basicvue",
-        component: Basic,
+        path: "/tailwind",
+        name: "tailwind-component",
+        component: () => import("../vue-views/tailwind/index.vue"),
     },
     {
-        path: "/hell",
-        name: "dashboard",
-        children: [],
+        path: "/:catchAll(.*)",
+        name: "404 - not found",
+        component: () => import("../components/404.vue"),
     },
 ];
 
