@@ -1,7 +1,7 @@
 <template lang="">
     <div>
         <card>
-            <namepage>pentingnya kesehatan dompet</namepage>
+            <namepage>pentingnya kesehatan</namepage>
         </card>
     </div>
 </template>
