@@ -7,6 +7,11 @@ const routes = [
         component: () => import("../vue-views/dashboard/dashboard.vue"),
     },
     {
+        path: "/login",
+        name: "login",
+        component: () => import("../vue-views/login.vue"),
+    },
+    {
         path: "/about",
         name: "about",
         component: () => import("../vue-views/about.vue"),
@@ -43,7 +48,15 @@ const routes = [
     },
 ];
 
-export default createRouter({
+const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes,
 });
+
+router.beforeEach((to, from, next) => {
+    if (to.name !== "login" && !isAuth) next({ name: "login" });
+    if (to.name === "login" && isAuth) next({ name: "home" });
+    else next();
+});
+
+export default router;

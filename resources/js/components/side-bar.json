@@ -1,0 +1,44 @@
+[
+    {
+        "path": "/",
+        "name": "dashboard",
+        "logo": "command",
+        "sp": "2"
+    },
+    {
+        "path": "/about",
+        "name": "about",
+        "logo": "cloud-rain",
+        "sp": ""
+    },
+    {
+        "path": "/basic-vue",
+        "name": "basic vue3",
+        "logo": "book-open",
+        "sp": "new"
+    },
+    {
+        "path": "/tailwind",
+        "name": "tailwind-component",
+        "logo": "box",
+        "sp": ""
+    },
+    {
+        "path": "/kesehatan",
+        "name": "kesehatan",
+        "logo": "heart",
+        "sp": ""
+    },
+    {
+        "path": "/client",
+        "name": "client",
+        "logo": "key",
+        "sp": ""
+    },
+    {
+        "path": "/notfound",
+        "name": "not-found",
+        "logo": "lock",
+        "sp": ""
+    }
+]

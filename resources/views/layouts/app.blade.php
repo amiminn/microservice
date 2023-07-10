@@ -9,13 +9,17 @@
 </head>
 
 <body id="app">
-    @include('components.header')
-    @include('components.sidebar')
-    <div class="p-4 sm:ml-64">
-        <div class="mt-14">
-            <router-view />
+    @auth
+        @include('components.header')
+        @include('components.sidebar')
+        <div class="p-4 sm:ml-64">
+            <div class="mt-14">
+                <router-view />
+            </div>
         </div>
-    </div>
+    @else
+        <router-view />
+    @endauth
 </body>
 
 </html>

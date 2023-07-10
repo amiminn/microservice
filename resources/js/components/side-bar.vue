@@ -21,57 +21,12 @@
     </div>
 </template>
 <script>
+import side from "./side-bar.json";
 export default {
     data() {
         return {
-            pages: [
-                {
-                    path: "/",
-                    name: "dashboard",
-                    logo: "command",
-                    sp: "2",
-                },
-                {
-                    path: "/about",
-                    name: "about",
-                    logo: "cloud-rain",
-                    sp: "",
-                },
-                {
-                    path: "/basic-vue",
-                    name: "basic vue3",
-                    logo: "book-open",
-                    sp: "new",
-                },
-                {
-                    path: "/tailwind",
-                    name: "tailwind-component",
-                    logo: "box",
-                    sp: "",
-                },
-                {
-                    path: "/kesehatan",
-                    name: "kesehatan",
-                    logo: "heart",
-                    sp: "",
-                },
-                {
-                    path: "/client",
-                    name: "client",
-                    logo: "key",
-                    sp: "",
-                },
-            ],
+            pages: side,
         };
-    },
-    mounted() {
-        // console.log($route.matched);
     },
 };
 </script>
-<style lang="">
-/* router-link-active,
-router-link-exact-active : {
-    color: red;
-} */
-</style>

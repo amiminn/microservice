@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\UserModel;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,8 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        UserModel::create([
-            "name" => "ilham",
+        User::create([
+            "name" => "ilhamGod",
             "username" => "ilham",
             "password" => "admin1",
         ]);

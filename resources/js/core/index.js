@@ -3,6 +3,7 @@ const store = createStore({
     state() {
         return {
             count: 0,
+            isAuth: false,
             app: {
                 title: "microservice",
             },
