@@ -12,8 +12,9 @@ class AuthService
     {
         if (Auth::attempt(['username' => $request['username'], 'password' => $request['password'], 'isActive' => 1])) {
             $user = Auth::user();
+            $token = $user->createToken('authToken')->accessToken;
 
-            session(['token' => $user->createToken('authToken')->accessToken]);
+            session(['token' => $token]);
 
             return Response::success("login berhasil.");
         }

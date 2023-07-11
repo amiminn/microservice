@@ -16,11 +16,13 @@
     "dependencies": {
         "@vitejs/plugin-vue": "^4.2.3",
         "flowbite": "^1.6.6",
+        "lodash": "^4.17.21",
         "sweetalert2": "^11.7.12",
         "vue": "^3.3.4",
         "vue-feather": "^2.0.0",
         "vue-loader": "^17.2.2",
         "vue-router": "^4.2.2",
+        "vue-table-dynamic": "^0.4.10",
         "vuex": "^4.0.2"
     }
 }

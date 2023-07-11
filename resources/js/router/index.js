@@ -22,9 +22,10 @@ const routes = [
         component: () => import("../vue-views/profile/profile.vue"),
     },
     {
-        path: "/client",
+        path: "/client/:id",
         name: "client",
         component: () => import("../vue-views/client/client.vue"),
+        props: true,
     },
     {
         path: "/basic-vue",

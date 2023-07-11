@@ -1,9 +1,11 @@
 <template lang="">
     <card>
-        <namepage>Client-Sercret</namepage>
+        <namepage>Client-Sercret {{ $route.params.id }} - {{ id }}</namepage>
     </card>
 </template>
 <script>
-export default {};
+export default {
+    props: ["id"],
+};
 </script>
 <style lang=""></style>

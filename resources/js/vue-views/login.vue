@@ -56,6 +56,7 @@ export default {
             try {
                 let res = await axios.post("login", this.form);
                 toast(res.data.msg);
+                // console.log(res);
                 window.location = "/";
             } catch (error) {
                 toast(error.response.data.msg, "error");
