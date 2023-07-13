@@ -1,43 +1,47 @@
 <template lang="">
-    <section x-data="login" class="px-4 py-24 mx-auto max-w-7xl">
-        <div
-            class="w-full mx-auto space-y-5 sm:w-8/12 md:w-6/12 lg:w-4/12 xl:w-3/12"
-        >
-            <h1 class="text-4xl font-semibold text-center text-gray-900">
-                Login
-            </h1>
-            <div class="pb-6 space-y-2 border-b border-gray-200"></div>
-            <form class="space-y-4" @submit.prevent="to_login">
-                <label class="block">
-                    <span class="block mb-1 text-xs font-medium text-gray-700"
-                        >Your Username</span
-                    >
+    <div
+        class="min-h-screen grid md:max-xl:grid-cols-5 grid-cols-1 bg-[url('wave.svg')] bg-no-repeat"
+    >
+        <div class="col-span-3">
+            <div class="hidden md:block p-8 text-white">
+                <card class="">microservice @amiminn</card>
+            </div>
+        </div>
+        <div class="col-span-2">
+            <div class="mx-8 mt-4 text-4xl text-white font-bold font-sans">
+                login
+            </div>
+            <div class="-my-8 min-h-screen grid content-center px-5">
+                <form class="space-y-4" @submit.prevent="to_login">
+                    <label class="label">username</label>
                     <input
                         class="form-input"
                         type="text"
                         placeholder="username"
                         v-model="form.username"
                     />
-                </label>
-                <label class="block">
-                    <span class="block mb-1 text-xs font-medium text-gray-700"
-                        >Your Password</span
+                    <label class="label">password</label>
+                    <div class="relative cursor-pointer">
+                        <div class="header-icon">
+                            <vue-feather type="eye-off"></vue-feather>
+                        </div>
+                        <input
+                            class="form-icon"
+                            type="password"
+                            placeholder="••••••••"
+                            v-model="form.password"
+                        />
+                    </div>
+                    <button
+                        type="submit"
+                        class="py-3 btn btn-primary btn-block"
                     >
-                    <input
-                        class="form-input"
-                        type="password"
-                        placeholder="••••••••"
-                        v-model="form.password"
-                    />
-                </label>
-                <input
-                    type="submit"
-                    class="w-full cursor-pointer py-3 btn btn-primary"
-                    value="masuk"
-                />
-            </form>
+                        login
+                    </button>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
 </template>
 <script>
 import axios from "axios";

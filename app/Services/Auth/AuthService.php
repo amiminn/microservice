@@ -19,7 +19,7 @@ class AuthService
             return Response::success("login berhasil.");
         }
 
-        return Response::failed("Oops, ada kesalahan teknis.");
+        return Response::failed("Oops, ada kesalahan server.");
     }
 
     public static function register($request)

@@ -22,7 +22,7 @@ const routes = [
         component: () => import("../vue-views/profile/profile.vue"),
     },
     {
-        path: "/client/:id",
+        path: "/client",
         name: "client",
         component: () => import("../vue-views/client/client.vue"),
         props: true,
@@ -50,7 +50,7 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
+    history: createWebHistory(import.meta.env.APP_URL),
     routes,
 });
 

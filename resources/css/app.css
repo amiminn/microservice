@@ -79,6 +79,16 @@
     select {
         @apply cursor-pointer;
     }
+    .li-paginate {
+        @apply cursor-pointer flex items-center justify-center px-4 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-blue-600 hover:text-white;
+    }
+    .paginate-active {
+        @apply text-white bg-blue-600 border-2 border-blue-600;
+    }
+    th,
+    td {
+        @apply px-6 py-4;
+    }
 }
 
 .no-scrollbar::-webkit-scrollbar {
