@@ -10,16 +10,20 @@ class AuthService
 {
     public static function login($request)
     {
-        if (Auth::attempt(['username' => $request['username'], 'password' => $request['password'], 'isActive' => 1])) {
-            $user = Auth::user();
-            $token = $user->createToken('authToken')->accessToken;
+        try {
+            if (Auth::attempt(['username' => $request['username'], 'password' => $request['password'], 'isActive' => 1])) {
+                $user = Auth::user();
+                $token = $user->createToken('authToken')->accessToken;
 
-            session(['token' => $token]);
+                session(['token' => $token]);
+                // return $token;
+                return Response::success("login berhasil.");
+            }
 
-            return Response::success("login berhasil.");
+            return Response::failed("Oops, ada kesalahan username atau password.");
+        } catch (\Throwable $th) {
+            return Response::failed($th->getMessage());
         }
-
-        return Response::failed("Oops, ada kesalahan server.");
     }
 
     public static function register($request)

@@ -7,16 +7,21 @@ import store from "./core/index.js";
 import platform from "./components/inc/title.vue";
 import Card from "./components/inc/card.vue";
 import Namepage from "./components/inc/namepage.vue";
+import Pengingat from "./components/inc/pengingat.vue";
+import HeaderPage from "./components/header.vue";
+
 const app = createApp({
     components: {
         SideBar,
         platform,
+        HeaderPage,
     },
 });
 
 app.component(VueFeather.name, VueFeather);
 app.component("card", Card);
 app.component("namepage", Namepage);
+app.component("pengingat", Pengingat);
 
 app.use(router);
 app.use(store);

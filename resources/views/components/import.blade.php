@@ -2,16 +2,14 @@
     window.Laravel = {
         csrfToken: '{{ csrf_token() }}'
     }
-    // if (!localStorage.getItem("secret")) {
-    //     localStorage.setItem("secret", "{{ session('token')}}");
-    // }
+    if (!localStorage.getItem("_x")) {
+        localStorage.setItem("_x", "{{ session('token') }}");
+    }
     @auth
-        window.isAuth=true
-        window.user = @json(auth()->user())
-        // window.authToken = localStorage.getItem("secret")
+            window.isAuth=true
+            window.user = @json(auth()->user())
         @else
-        // window.authToken = ""
-        window.isAuth=false
+            window.isAuth=false
     @endauth
     </script>
 <link rel="icon" type="image/x-icon" href="{{ asset("./favicon.png")}}">
