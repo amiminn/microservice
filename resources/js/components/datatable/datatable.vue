@@ -1,8 +1,8 @@
 <template lang="">
     <div class="grid gap-4">
-        <div class="relative overflow-x-auto sm:rounded">
+        <div class="overflow-x-auto sm:rounded">
             <div class="grid grid-cols-2 mb-3">
-                <select class="form-input !w-1/4">
+                <select class="form-input lg:!w-1/4 md:!w-1/3 sm:!w-1/4">
                     <template v-for="(val, id) in valpage">
                         <option value="{{ valpage[id] }}">
                             {{ valpage[id] }}
@@ -49,19 +49,19 @@
                     </a>
                 </li>
                 <li>
-                    <a class="li-paginate">1</a>
+                    <a class="li-paginate">...</a>
                 </li>
                 <li>
-                    <a class="li-paginate">2</a>
+                    <a class="li-paginate">12</a>
                 </li>
                 <li>
-                    <a class="li-paginate">3</a>
+                    <a class="li-paginate">13</a>
                 </li>
                 <li>
-                    <a class="li-paginate paginate-active">4</a>
+                    <a class="li-paginate paginate-active">14</a>
                 </li>
                 <li>
-                    <a class="li-paginate">5</a>
+                    <a class="li-paginate">...</a>
                 </li>
                 <li>
                     <a class="li-paginate rounded-r">
