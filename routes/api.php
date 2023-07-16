@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\Auth\AuthContoller;
 use App\Http\Controllers\Api\Auth\AuthUserController;
+use App\Http\Requests\Auth\newPasswordRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,4 +20,9 @@ Route::post("user", function () {
 Route::controller(AuthUserController::class)->middleware(["auth:api"])->group(function () {
     Route::post("update-profile", "updateProfile");
     Route::post("update-email", "updateEmail");
+    Route::post("update-password", "updatePassword");
+});
+
+Route::post("pw", function (newPasswordRequest $request) {
+    return $request;
 });

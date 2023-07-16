@@ -17,4 +17,9 @@ class AuthUserController extends Controller
     {
         return UserAuth::updateEmail($request);
     }
+
+    public function updatePassword(Request $request)
+    {
+        return UserAuth::updatePassword($request);
+    }
 }

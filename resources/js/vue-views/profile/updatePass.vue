@@ -5,15 +5,30 @@
         <form @submit.prevent="updatePassword">
             <div class="mb-3">
                 <label>password lama</label>
-                <input type="password" class="form-input" placeholder="***" />
+                <input
+                    type="password"
+                    class="form-input"
+                    placeholder="***"
+                    v-model="upPass.passLama"
+                />
             </div>
             <div class="mb-3">
                 <label>password baru</label>
-                <input type="password" class="form-input" placeholder="***" />
+                <input
+                    type="password"
+                    class="form-input"
+                    placeholder="***"
+                    v-model="upPass.passBaru"
+                />
             </div>
             <div class="mb-3">
                 <label>confirm password baru</label>
-                <input type="password" class="form-input" placeholder="***" />
+                <input
+                    type="password"
+                    class="form-input"
+                    placeholder="***"
+                    v-model="upPass.confirmPassBaru"
+                />
             </div>
             <div class="mb-3">
                 <pengingat
@@ -39,8 +54,17 @@ export default {
         };
     },
     methods: {
-        updatePassword() {
-            console.log("up pass");
+        async updatePassword() {
+            try {
+                let res = await axios.post("/api/update-password", {
+                    password_lama: this.upPass.passLama,
+                    password: this.upPass.passBaru,
+                    password_confirmation: this.upPass.confirmPassBaru,
+                });
+                toast(res.data.msg);
+            } catch (error) {
+                toast(error.response.data.msg, "error");
+            }
         },
     },
 };

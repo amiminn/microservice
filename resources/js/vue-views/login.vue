@@ -1,17 +1,17 @@
 <template lang="">
     <div
-        class="min-h-screen grid md:max-xl:grid-cols-5 grid-cols-1 bg-[url('wave.svg')] bg-no-repeat"
+        class="min-h-screen grid md:lg:grid-cols-5 grid-cols-1 bg-[url('wave.svg')] bg-no-repeat"
     >
         <div class="col-span-3">
-            <div class="hidden md:block p-8 text-white">
-                <card class="">microservice @amiminn</card>
+            <div class="hidden md:block p-8 px-28 text-white">
+                <card class="">microservice@amiminn</card>
             </div>
         </div>
         <div class="col-span-2">
-            <div class="mx-8 mt-4 text-4xl text-white font-bold font-sans">
-                login
+            <div class="mx-8 text-4xl text-white font-bold font-sans">
+                <span>login</span>
             </div>
-            <div class="-my-8 min-h-screen grid content-center px-5">
+            <div class="-my-10 min-h-screen grid content-center px-5">
                 <form class="space-y-4" @submit.prevent="to_login">
                     <label class="label">username</label>
                     <input
@@ -21,16 +21,22 @@
                         v-model="form.username"
                     />
                     <label class="label">password</label>
-                    <div class="relative cursor-pointer">
-                        <div class="header-icon">
-                            <vue-feather type="eye-off"></vue-feather>
-                        </div>
+                    <div class="flex">
                         <input
-                            class="form-icon"
-                            type="password"
+                            class="mr-5 form-input"
+                            :type="showPw ? 'text' : 'password'"
                             placeholder="••••••••"
                             v-model="form.password"
                         />
+                        <div
+                            class="grid content-center justify-items-center -ml-4 w-10"
+                        >
+                            <vue-feather
+                                @click="on"
+                                :type="showPw ? 'eye' : 'eye-off'"
+                                class="text-gray-600 text-sm cursor-pointer"
+                            ></vue-feather>
+                        </div>
                     </div>
                     <button
                         type="submit"
@@ -44,8 +50,6 @@
     </div>
 </template>
 <script>
-import axios from "axios";
-
 export default {
     data() {
         return {
@@ -53,6 +57,7 @@ export default {
                 username: null,
                 password: null,
             },
+            showPw: false,
         };
     },
     methods: {
@@ -65,6 +70,9 @@ export default {
             } catch (error) {
                 toast(error.response.data.msg, "error");
             }
+        },
+        on() {
+            this.showPw = !this.showPw;
         },
     },
 };
