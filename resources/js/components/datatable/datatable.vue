@@ -1,97 +1,82 @@
 <template lang="">
-    <div class="grid gap-4">
-        <div class="overflow-x-auto sm:rounded">
-            <div class="grid grid-cols-2 mb-3">
-                <select class="form-input lg:!w-1/4 md:!w-1/3 sm:!w-1/4">
-                    <template v-for="(val, id) in valpage">
-                        <option value="{{ valpage[id] }}">
-                            {{ valpage[id] }}
-                        </option>
-                    </template>
-                </select>
+    <DataTable
+        buttons-pagination
+        :rows-items="intRows"
+        :rows-per-page="10"
+        :headers="headers"
+        :items="items"
+        :theme-color="themeColor"
+    >
+        <template #item-action="{ name }">
+            <div class="player-wrapper">
+                <router-link :to="name">hapus</router-link>
             </div>
-            <table class="w-full text-sm text-left text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                    <tr>
-                        <th class="px-6 py-3" v-for="(item, id) in datarow">
-                            {{ datarow[id] }}
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr
-                        v-for="(item, index) in datacols"
-                        class="bg-white border-b hover:bg-gray-50"
-                    >
-                        <th class="font-medium text-gray-900 whitespace-nowrap">
-                            {{ item.produk_name }}
-                        </th>
-                        <td>{{ item.color }}</td>
-                        <td>{{ item.category }}</td>
-                        <td>{{ item.price }}</td>
-                        <td class="text-right">
-                            <a
-                                href="#"
-                                class="font-medium text-blue-600 hover:underline"
-                                >Edit</a
-                            >
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <nav class="flex justify-end">
-            <ul class="flex items-center -space-x-px h-8">
-                <li>
-                    <a class="li-paginate rounded-l">
-                        <vue-feather type="chevron-left"></vue-feather>
-                    </a>
-                </li>
-                <li>
-                    <a class="li-paginate">...</a>
-                </li>
-                <li>
-                    <a class="li-paginate">12</a>
-                </li>
-                <li>
-                    <a class="li-paginate">13</a>
-                </li>
-                <li>
-                    <a class="li-paginate paginate-active">14</a>
-                </li>
-                <li>
-                    <a class="li-paginate">...</a>
-                </li>
-                <li>
-                    <a class="li-paginate rounded-r">
-                        <vue-feather type="chevron-right"></vue-feather>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+        </template>
+    </DataTable>
 </template>
-<script>
-export default {
+<script lang="ts">
+import DataTable from "vue3-easy-data-table";
+import "vue3-easy-data-table/dist/style.css";
+import { defineComponent } from "vue";
+
+export default defineComponent({
+    components: { DataTable },
     data() {
         return {
-            valpage: [5, 10, 20, 25],
-            datarow: [],
-            datacols: [],
+            headers: [],
+            items: [],
+            intRows: [10, 15, 20],
+            themeColor: "#f48225",
         };
     },
     mounted() {
-        this.datarow = ["Product name", "color", "kategory", "price", " "];
-        this.datacols = [
-            {
-                produk_name: "Apple MacBook Pro 17 inc",
-                color: "silver",
-                category: "laptop",
-                price: "$2999",
-            },
+        this.headers = [
+            { text: "Name", value: "name", fixed: true },
+            { text: "Height (cm)", value: "height" },
+            { text: "Weight (kg)", value: "weight" },
+            { text: "Age", value: "age", sortable: true },
+            { text: "action", value: "action" },
+        ];
+
+        this.items = [
+            { name: "Curry", height: 178, weight: 77, age: 20 },
+            { name: "James", height: 180, weight: 75, age: 21 },
+            { name: "Jordan", height: 181, weight: 73, age: 22 },
+            { name: "Curry", height: 178, weight: 77, age: 20 },
+            { name: "James", height: 180, weight: 75, age: 21 },
+            { name: "Jordan", height: 181, weight: 73, age: 22 },
+            { name: "Curry", height: 178, weight: 77, age: 20 },
+            { name: "James", height: 180, weight: 75, age: 21 },
+            { name: "Jordan", height: 181, weight: 73, age: 22 },
+            { name: "Curry", height: 178, weight: 77, age: 20 },
+            { name: "James", height: 180, weight: 75, age: 21 },
+            { name: "Jordan", height: 181, weight: 73, age: 22 },
         ];
     },
-};
+});
 </script>
-<style lang=""></style>
+<style>
+@tailwind components;
+@layer components {
+    .vue3-easy-data-table {
+        @apply !rounded-md p-1  !border-2;
+    }
+    .pagination__items-index {
+        @apply !italic;
+    }
+    .vue3-easy-data-table__footer {
+        @apply justify-center !py-6;
+    }
+    .pagination__rows-per-page {
+        @apply !text-left;
+    }
+    .show-shadow {
+        @apply !shadow !shadow-none;
+    }
+    .item,
+    .button {
+        @apply !px-2;
+    }
+    /* .vue3-easy-data-table__header */
+}
+</style>

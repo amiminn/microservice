@@ -1,7 +1,7 @@
 import "./bootstrap";
 import VueFeather from "vue-feather";
 import { createApp } from "vue/dist/vue.esm-bundler.js";
-import router from "./router";
+import router from "./router/index.mjs";
 import SideBar from "./components/side-bar.vue";
 import store from "./core/index.js";
 import platform from "./components/inc/title.vue";
