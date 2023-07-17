@@ -9,6 +9,7 @@ import Card from "./components/inc/card.vue";
 import Namepage from "./components/inc/namepage.vue";
 import Pengingat from "./components/inc/pengingat.vue";
 import HeaderPage from "./components/header.vue";
+import Kembali from "./components/inc/kembali.vue";
 
 const app = createApp({
     components: {
@@ -22,6 +23,7 @@ app.component(VueFeather.name, VueFeather);
 app.component("card", Card);
 app.component("namepage", Namepage);
 app.component("pengingat", Pengingat);
+app.component("kembali", Kembali);
 
 app.use(router);
 app.use(store);

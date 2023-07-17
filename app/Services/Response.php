@@ -23,6 +23,14 @@ class Response
         ], $status);
     }
 
+    public static function error($status = 400)
+    {
+        return response([
+            'success' => false,
+            'msg' => "Oops, sepertinya ada kesalahan server."
+        ], $status);
+    }
+
     public static function data($data)
     {
         return [

@@ -1,17 +1,13 @@
 <template>
     <div>
-        <button class="btn btn-primary" @click="kembali">
-            <i class="fa fa-chevron-left" aria-hidden="true"></i>
-            Kembali
+        <button class="!py-1 btn btn-sky flex items-center" @click="kembali">
+            <vue-feather type="chevron-left"></vue-feather>
+            <span>back</span>
         </button>
     </div>
 </template>
 <script>
 export default {
-    data() {
-        return {};
-    },
-    mounted() {},
     methods: {
         kembali() {
             this.$router.go(-1);

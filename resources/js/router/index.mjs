@@ -12,11 +12,6 @@ const routes = [
         component: () => import("../vue-views/login.vue"),
     },
     {
-        path: "/about",
-        name: "about",
-        component: () => import("../vue-views/about.vue"),
-    },
-    {
         path: "/profile",
         name: "profile",
         component: () => import("../vue-views/profile/profile.vue"),
@@ -28,14 +23,14 @@ const routes = [
         props: true,
     },
     {
+        path: "/create-client",
+        name: "new client",
+        component: () => import("../vue-views/client/create-client.vue"),
+    },
+    {
         path: "/basic-vue",
         name: "basic-vue",
         component: () => import("../vue-views/vue/learnvue.vue"),
-    },
-    {
-        path: "/kesehatan",
-        name: "kesehatan",
-        component: () => import("../vue-views/kesehatan/kesehatan.vue"),
     },
     {
         path: "/tailwind",

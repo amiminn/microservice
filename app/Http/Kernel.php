@@ -67,5 +67,7 @@ class Kernel extends HttpKernel
 
         'cors' => \App\Http\Middleware\Cors::class,
         'json' => \App\Http\Middleware\JsonOnly::class,
+
+        'client' =>  \App\Http\Middleware\ClientMiddleware::class,
     ];
 }

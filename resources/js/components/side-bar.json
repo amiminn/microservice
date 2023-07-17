@@ -6,12 +6,6 @@
         "sp": "2"
     },
     {
-        "path": "/about",
-        "name": "about",
-        "logo": "cloud-rain",
-        "sp": ""
-    },
-    {
         "path": "/basic-vue",
         "name": "basic vue3",
         "logo": "book-open",
@@ -21,12 +15,6 @@
         "path": "/tailwind",
         "name": "tailwind-component",
         "logo": "box",
-        "sp": ""
-    },
-    {
-        "path": "/kesehatan",
-        "name": "kesehatan",
-        "logo": "heart",
         "sp": ""
     },
     {
