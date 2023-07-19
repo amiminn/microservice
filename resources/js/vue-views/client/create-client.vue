@@ -1,24 +1,24 @@
 <template lang="">
     <div>
+        <kembali></kembali>
         <card>
-            <namepage>Create Client-Secret</namepage>
-            <kembali></kembali>
+            <namepage>Create Client-key</namepage>
         </card>
         <card>
-            <namepage>New Client-secret</namepage>
+            <!-- <namepage>New Client-key</namepage> -->
             <form @submit.prevent="createClient">
-                <div class="mb-3">
-                    <label class="label">nama client-secret</label>
+                <div class="mb-3 grid md:lg:grid-cols-3 gap-3">
+                    <label class="label">nama client-key</label>
                     <input
                         type="text"
-                        class="form-input"
-                        placeholder="name client secret"
+                        class="form-input col-span-2"
+                        placeholder="name client-key"
                         v-model="dataClient.name"
                     />
                 </div>
 
                 <button type="submit" class="btn btn-danger btn-block">
-                    create
+                    simpan client-key
                 </button>
             </form>
         </card>

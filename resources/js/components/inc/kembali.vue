@@ -1,8 +1,8 @@
 <template>
     <div>
-        <button class="!py-1 btn btn-sky flex items-center" @click="kembali">
+        <button class="italic text-sm flex items-center" @click="kembali">
             <vue-feather type="chevron-left"></vue-feather>
-            <span>back</span>
+            <span>kembali</span>
         </button>
     </div>
 </template>

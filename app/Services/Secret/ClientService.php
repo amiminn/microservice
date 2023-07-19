@@ -29,7 +29,7 @@ class ClientService
 
     public function show($id)
     {
-        return Response::data(ClientModel::find($id));
+        return ClientModel::where("client_id", $id)->first();
     }
 
     public function update(Request $request, $id)

@@ -1,7 +1,14 @@
 <template lang="">
     <card class="col-auto">
         <namepage class="text-lg"> update password </namepage>
-
+        <div class="mb-3">
+            <div class="alert">
+                <pengingat
+                    >Harap untuk selalu mengingat sandi anda setelah
+                    perubahan.</pengingat
+                >
+            </div>
+        </div>
         <form @submit.prevent="updatePassword">
             <div class="mb-3">
                 <label>password lama</label>
@@ -29,12 +36,6 @@
                     placeholder="***"
                     v-model="upPass.confirmPassBaru"
                 />
-            </div>
-            <div class="mb-3">
-                <pengingat
-                    >Harap untuk selalu mengingat sandi anda setelah
-                    perubahan.</pengingat
-                >
             </div>
             <button type="submit" class="btn btn-block btn-danger mb-3">
                 submit

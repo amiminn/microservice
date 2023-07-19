@@ -1,6 +1,14 @@
 <template lang="">
     <card class="col-auto">
         <namepage class="text-lg">update email </namepage>
+        <div class="mb-3">
+            <div class="alert">
+                <pengingat>
+                    email berperan penting dalam mengatur akun anda. harap
+                    hati-hati saat ada perubahan email.
+                </pengingat>
+            </div>
+        </div>
         <form @submit.prevent="updateEmail">
             <div class="mb-3">
                 <label>email</label>
@@ -10,12 +18,7 @@
                     v-model="formUser.email"
                 />
             </div>
-            <div class="mb-3">
-                <pengingat>
-                    email berperan penting dalam mengatur akun anda. harap
-                    hati-hati saat ada perubahan email.
-                </pengingat>
-            </div>
+
             <button type="submit" class="btn btn-block btn-danger mb-3">
                 submit
             </button>

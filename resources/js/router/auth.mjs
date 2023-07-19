@@ -21,6 +21,12 @@ export default [
         props: true,
     },
     {
+        path: "/client-key/:key",
+        name: "show-client",
+        component: () => import("../vue-views/client/show-client.vue"),
+        props: true,
+    },
+    {
         path: "/create-client",
         name: "new client",
         component: () => import("../vue-views/client/create-client.vue"),

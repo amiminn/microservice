@@ -6,15 +6,44 @@
         </router-link>
     </card>
     <card>
-        <div @click="ke">ke</div>
-        <ul>
-            <li v-for="item in dataClient.data">{{ item.name }}</li>
-        </ul>
-        <paginate
-            :limit="1"
-            :data="dataClient"
-            @pagination-change-page="getResult"
-        ></paginate>
+        <div class="table-container">
+            <table class="table">
+                <thead class="thead">
+                    <tr>
+                        <th class="th">#</th>
+                        <th class="th">Name</th>
+                        <th class="th">Clien-ID</th>
+                        <th class="th">status</th>
+                        <th class="th">action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                        class="bg-white border-b"
+                        v-for="(data, id) in dataClient.data"
+                    >
+                        <th class="th">{{ id + 1 }}</th>
+                        <th class="td">{{ data.name }}</th>
+                        <td class="td">{{ data.client_id }}</td>
+                        <td class="td">
+                            {{ this.$filters.status(data.status) }}
+                        </td>
+                        <td class="td">
+                            <router-link :to="`/client-key/` + data.client_id"
+                                >view</router-link
+                            >
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-4 text-right">
+            <paginate
+                :limit="1"
+                :data="dataClient"
+                @pagination-change-page="getResult"
+            ></paginate>
+        </div>
     </card>
 </template>
 <script>
