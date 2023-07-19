@@ -42,12 +42,13 @@
                         </router-link>
                     </li>
                     <li>
-                        <a
-                            href="logout"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:rounded-b hover:bg-rose-300"
+                        <div
+                            @click="logout"
+                            class="cursor-pointer block px-4 py-2 text-sm text-gray-700 hover:rounded-b hover:bg-rose-300"
                             role="menuitem"
-                            >Sign out</a
                         >
+                            Sign out
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -74,6 +75,16 @@ export default {
             },
         ];
         this.FUser = user;
+    },
+    methods: {
+        logout() {
+            if (localStorage.getItem("_x")) {
+                localStorage.removeItem("_x");
+            } else {
+            }
+
+            window.location = "logout";
+        },
     },
 };
 </script>

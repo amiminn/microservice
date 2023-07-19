@@ -28,9 +28,9 @@ Route::middleware(['auth:api'])->group(function () {
         Route::post("update-password", "updatePassword");
     });
 
-    Route::prefix("secret")->group(function () {
+    Route::prefix("client")->group(function () {
         Route::apiResources([
-            "client" => ClientService::class
+            "/" => ClientService::class
         ]);
         Route::get('reset-client/{id}', [ClientService::class, 'updateClientSecret']);
         Route::get('status-client/{id}', [ClientService::class, 'updateClientStatus']);

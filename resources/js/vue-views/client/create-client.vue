@@ -75,10 +75,7 @@ export default {
     methods: {
         async createClient() {
             try {
-                let res = await axios.post(
-                    "/api/secret/client",
-                    this.dataClient
-                );
+                let res = await axios.post(this.$api.client, this.dataClient);
                 this.newClient = res.data.data;
                 toast(res.data.msg);
                 this.ready = true;

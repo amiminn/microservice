@@ -10,7 +10,7 @@ class ClientService
 {
     public function index()
     {
-        return Response::data(ClientModel::get());
+        return ClientModel::paginate(5);
     }
 
     public function store(Request $request)

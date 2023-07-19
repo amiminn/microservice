@@ -41,6 +41,8 @@ app.config.globalProperties.$filters = {
     },
 };
 
-app.config.globalProperties.$var = "ini variable global";
+app.config.globalProperties.$api = {
+    client: "/api/client",
+};
 
 app.mount("#app");

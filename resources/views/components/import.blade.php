@@ -2,10 +2,8 @@
     window.Laravel = {
         csrfToken: '{{ csrf_token() }}'
     }
-    if (!localStorage.getItem("_x")) {
-        localStorage.setItem("_x", "{{ session('token') }}");
-    }
-    @auth
+        @auth
+            localStorage.setItem("_x", "{{ session('token') }}");
             window.isAuth=true
             window.user = @json(auth()->user())
         @else
