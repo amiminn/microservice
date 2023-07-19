@@ -29,9 +29,9 @@
                             {{ this.$filters.status(data.status) }}
                         </td>
                         <td class="td">
-                            <router-link :to="`/client-key/` + data.client_id"
-                                >view</router-link
-                            >
+                            <router-link :to="`/client-key/` + data.id">
+                                <vue-feather type="eye"></vue-feather>
+                            </router-link>
                         </td>
                     </tr>
                 </tbody>

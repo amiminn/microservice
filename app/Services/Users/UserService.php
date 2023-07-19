@@ -9,7 +9,7 @@ class UserService
 {
     public static function index()
     {
-        return Response::data(User::get());
+        return User::paginate(1);
     }
 
     public static function store($request)
@@ -24,7 +24,7 @@ class UserService
 
     public static function show($id)
     {
-        return Response::data(User::where('id', $id)->first());
+        return User::find($id);
     }
 
     public static function update($request, $id)
@@ -45,7 +45,7 @@ class UserService
 
     public static function activate($id)
     {
-        $user = User::where('id', $id)->first();
+        $user = User::find($id);
         $user->active();
         $user->save();
 

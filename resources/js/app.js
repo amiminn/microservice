@@ -43,6 +43,7 @@ app.config.globalProperties.$filters = {
 
 app.config.globalProperties.$api = {
     client: "/api/client",
+    users: "/api/users",
 };
 
 app.mount("#app");

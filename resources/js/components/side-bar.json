@@ -24,6 +24,12 @@
         "sp": ""
     },
     {
+        "path": "/kelola-user",
+        "name": "users",
+        "logo": "users",
+        "sp": ""
+    },
+    {
         "path": "/notfound",
         "name": "not-found",
         "logo": "lock",

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\Auth\AuthContoller;
 use App\Http\Controllers\Api\Auth\AuthUserController;
+use App\Http\Controllers\Api\Users\UserController;
 use App\Services\Secret\ClientService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,7 +30,8 @@ Route::middleware(['auth:api'])->group(function () {
     });
 
     Route::apiResources([
-        "client" => ClientService::class
+        "client" => ClientService::class,
+        "users" => UserController::class
     ]);
 
     Route::prefix("client")->group(function () {

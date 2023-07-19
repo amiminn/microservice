@@ -42,6 +42,21 @@ export default [
         component: () => import("../vue-views/tailwind/index.vue"),
     },
     {
+        path: "/kelola-user",
+        name: "users",
+        component: () => import("../vue-views/users/index.vue"),
+    },
+    {
+        path: "/kelola-user/:id",
+        name: "show-users",
+        component: () => import("../vue-views/users/showUser.vue"),
+    },
+    {
+        path: "/tambah-user",
+        name: "add-users",
+        component: () => import("../vue-views/users/createUser.vue"),
+    },
+    {
         path: "/:catchAll(.*)",
         name: "404 - not found",
         component: () => import("../components/404.vue"),
