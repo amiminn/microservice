@@ -14,13 +14,13 @@ import Kembali from "./components/inc/kembali.vue";
 const app = createApp({
     components: {
         SideBar,
-        platform,
         HeaderPage,
     },
 });
 
 app.component(VueFeather.name, VueFeather);
 app.component("card", Card);
+app.component("platform", platform);
 app.component("namepage", Namepage);
 app.component("pengingat", Pengingat);
 app.component("kembali", Kembali);
