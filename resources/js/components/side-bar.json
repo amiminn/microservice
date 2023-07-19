@@ -1,15 +1,9 @@
 [
     {
-        "path": "/",
+        "path": "/dashboard",
         "name": "dashboard",
         "logo": "command",
         "sp": "2"
-    },
-    {
-        "path": "/basic-vue",
-        "name": "basic vue3",
-        "logo": "book-open",
-        "sp": "new"
     },
     {
         "path": "/tailwind",

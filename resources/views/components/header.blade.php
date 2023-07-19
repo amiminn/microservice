@@ -8,7 +8,7 @@
                     <span class="sr-only">Open sidebar</span>
                     <vue-feather type="align-left"></vue-feather>
                 </button>
-                <router-link to="/" class="flex ml-2 md:mr-24">
+                <router-link to="/dashboard" class="flex ml-2 md:mr-24">
                     <div class="h-8 mr-3 text-2xl">🌱</div>
                     <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap">
                         <platform />

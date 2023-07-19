@@ -1,6 +1,6 @@
 export default [
     {
-        path: "/",
+        path: "/dashboard",
         name: "home",
         component: () => import("../vue-views/dashboard/dashboard.vue"),
     },
@@ -30,11 +30,6 @@ export default [
         path: "/create-client",
         name: "new client",
         component: () => import("../vue-views/client/create-client.vue"),
-    },
-    {
-        path: "/basic-vue",
-        name: "basic-vue",
-        component: () => import("../vue-views/vue/learnvue.vue"),
     },
     {
         path: "/tailwind",
