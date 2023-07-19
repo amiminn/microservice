@@ -12,7 +12,7 @@
     @auth
         @include('components.header')
         @include('components.sidebar')
-        <div class="p-4 sm:ml-64">
+        <div class="p-4 sm:ml-64 bg-gray-50 min-h-screen">
             <div class="mt-14">
                 <router-view />
             </div>

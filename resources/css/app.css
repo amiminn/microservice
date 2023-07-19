@@ -4,7 +4,7 @@
 
 @layer components {
     .card {
-        @apply my-2 w-full border-2 border-gray-200 border-dashed rounded-lg;
+        @apply my-2 w-full border-2 border-gray-200 border-dashed rounded-lg bg-white;
     }
     .card-body {
         @apply p-4;
