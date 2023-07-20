@@ -13,6 +13,7 @@ class ClientModel extends Model
     protected $table = 'client';
     protected $guarded = [];
 
+    public $incrementing = false;
     // protected $hidden = ['created_at', 'updated_at'];
 
     public function status()
@@ -30,6 +31,7 @@ class ClientModel extends Model
         parent::boot();
 
         static::creating(function ($model) {
+            $model->id = Response::epoch();
             $model->client_id = Response::random(20);
             $model->client_secret = Response::random(60);
         });

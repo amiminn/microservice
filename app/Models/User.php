@@ -18,6 +18,8 @@ class User extends Authenticatable
     protected $table = 'users';
     protected $guarded = [];
 
+    public $incrementing = false;
+
     protected $hidden = [
         'password',
     ];
@@ -36,6 +38,7 @@ class User extends Authenticatable
         parent::boot();
 
         static::creating(function ($model) {
+            $model->id = Response::epoch();
             $model->token = Response::random(60);
             $model->avatar = Response::url('/default.jpg');
         });

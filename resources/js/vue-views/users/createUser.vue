@@ -90,7 +90,6 @@ export default {
             try {
                 let res = await axios.post(this.$api.users, this.formUser);
                 toast(res.data.msg);
-                console.log(res);
             } catch (error) {
                 toast(error.response.data.msg, "error");
             }

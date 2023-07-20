@@ -12,7 +12,7 @@
                     <div class="alert">
                         <pengingat>
                             data username sangat sensitive bagi user
-                            bersangkutan, harap tidak sembarangan merubah data.
+                            bersangkutan, harap tidak sembarang merubah data.
                         </pengingat>
                     </div>
                     <div class="mb-3">
