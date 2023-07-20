@@ -1,7 +1,7 @@
 <template lang="">
     <div>
         <namepage>home</namepage>
-        <button class="btn btn-danger">login</button>
+        <router-link to="/login" class="btn btn-danger">login</router-link>
     </div>
 </template>
 <script>

@@ -2,19 +2,17 @@ import "./bootstrap";
 import VueFeather from "vue-feather";
 import { createApp } from "vue/dist/vue.esm-bundler.js";
 import router from "./router/index.mjs";
-import SideBar from "./components/side-bar.vue";
 import store from "./core/index.js";
 import platform from "./components/inc/title.vue";
 import Card from "./components/inc/card.vue";
 import Namepage from "./components/inc/namepage.vue";
 import Pengingat from "./components/inc/pengingat.vue";
-import HeaderPage from "./components/header.vue";
 import Kembali from "./components/inc/kembali.vue";
+import MainApp from "./vue-views/app.vue";
 
 const app = createApp({
     components: {
-        SideBar,
-        HeaderPage,
+        MainApp,
     },
 });
 
@@ -38,6 +36,10 @@ app.config.globalProperties.$filters = {
     status(data = null) {
         if (data == 1) return "Aktif";
         if (data == 0) return "Nonaktif";
+    },
+    role(data = null) {
+        if (data == 1) return "Admin";
+        if (data == 0) return "User";
     },
 };
 

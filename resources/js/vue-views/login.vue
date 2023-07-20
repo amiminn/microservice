@@ -4,7 +4,9 @@
     >
         <div class="col-span-3">
             <div class="hidden md:block p-8 px-28 text-white">
-                <card class="">microservice@amiminn</card>
+                <div class="card !bg-transparent">
+                    <div class="card-body">microservice@amiminn</div>
+                </div>
             </div>
         </div>
         <div class="col-span-2">

@@ -14,14 +14,17 @@
                             <span class="sr-only">Open sidebar</span>
                             <vue-feather type="align-left"></vue-feather>
                         </button>
-                        <router-link to="/dashboard" class="flex ml-2 md:mr-24">
+                        <div
+                            @click="todashboard"
+                            class="flex ml-2 md:mr-24 cursor-pointer"
+                        >
                             <div class="h-8 mr-3 text-2xl">🌱</div>
                             <span
                                 class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap"
                             >
                                 <platform />
                             </span>
-                        </router-link>
+                        </div>
                     </div>
 
                     <div class="flex items-center">
@@ -116,6 +119,10 @@ export default {
             }
 
             window.location = "logout";
+        },
+
+        todashboard() {
+            this.$router.push("/dashboard");
         },
     },
 };

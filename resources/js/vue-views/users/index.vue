@@ -28,7 +28,9 @@
                             <td class="td">{{ idx + 1 }}</td>
                             <th class="th">{{ data.name }}</th>
                             <td class="td">{{ data.email }}</td>
-                            <td class="td">{{ data.role }}</td>
+                            <td class="td">
+                                {{ this.$filters.role(data.role) }}
+                            </td>
                             <td class="td">
                                 {{ this.$filters.status(data.isActive) }}
                             </td>
@@ -78,7 +80,7 @@ export default {
                 query: { page },
             });
 
-            this.getClient(page);
+            this.getDataUser(page);
         },
 
         getResult(page) {

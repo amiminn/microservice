@@ -10,17 +10,9 @@
 
 <body id="app">
     @auth
-        <div>
-            <header-page></header-page>        
-            <side-bar></side-bar>
-        </div>
-        <div class="p-4 sm:ml-64 bg-gray-50 min-h-screen">
-            <div class="mt-14">
-                <router-view />
-            </div>
-        </div>
+    <main-app></main-app>
     @else
-        <router-view />
+    <router-view />
     @endauth
 </body>
 

@@ -1,18 +1,8 @@
 import { createStore } from "vuex";
+import settings from "./settings.js";
 const store = createStore({
-    state() {
-        return {
-            count: 0,
-            isAuth: false,
-            app: {
-                title: "microservice",
-            },
-        };
-    },
-    mutations: {
-        increment(state) {
-            state.count++;
-        },
+    modules: {
+        settings,
     },
 });
 

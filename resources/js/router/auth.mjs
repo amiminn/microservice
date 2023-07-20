@@ -1,7 +1,12 @@
 export default [
     {
-        path: "/dashboard",
+        path: "/",
         name: "home",
+        component: () => import("../vue-views/index.vue"),
+    },
+    {
+        path: "/dashboard",
+        name: "dashboard",
         component: () => import("../vue-views/dashboard/dashboard.vue"),
     },
     {

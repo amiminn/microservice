@@ -15,42 +15,51 @@
                         type="text"
                         class="form-input col-span-2"
                         placeholder="Nama"
+                        v-model="formUser.name"
                     />
                     <span class="label">Username</span>
                     <input
                         type="text"
                         class="form-input col-span-2"
                         placeholder="username"
+                        v-model="formUser.username"
                     />
                     <span class="label">Email</span>
                     <input
                         type="text"
                         class="form-input col-span-2"
                         placeholder="***@mail.com"
+                        v-model="formUser.email"
                     />
                     <span class="label">Aktif</span>
-                    <select class="form-input col-span-2">
-                        <option disabled selected></option>
-                        <option value="1">aktif</option>
+                    <select
+                        class="form-input col-span-2"
+                        v-model="formUser.isActive"
+                    >
                         <option value="0">non-aktif</option>
+                        <option selected value="1">aktif</option>
                     </select>
                     <span class="label">Role</span>
-                    <select class="form-input col-span-2">
-                        <option disabled selected></option>
-                        <option value="1">admin</option>
+                    <select
+                        class="form-input col-span-2"
+                        v-model="formUser.role"
+                    >
                         <option value="0">user</option>
+                        <option selected value="1">admin</option>
                     </select>
                     <span class="label">Password</span>
                     <input
                         type="password"
                         class="form-input col-span-2"
                         placeholder="***"
+                        v-model="formUser.password"
                     />
                     <span class="label">Konfirmasi Password</span>
                     <input
                         type="password"
                         class="form-input col-span-2"
                         placeholder="***"
+                        v-model="formUser.password_confirmation"
                     />
                 </div>
                 <button type="submit" class="btn btn-primary btn-block mt-3">
@@ -64,12 +73,28 @@
 export default {
     data() {
         return {
-            formUser: {},
+            formUser: {
+                name: null,
+                username: null,
+                email: null,
+                role: null,
+                isActive: null,
+                password: null,
+                password_confirmation: null,
+            },
         };
     },
 
     methods: {
-        async createUser() {},
+        async createUser() {
+            try {
+                let res = await axios.post(this.$api.users, this.formUser);
+                toast(res.data.msg);
+                console.log(res);
+            } catch (error) {
+                toast(error.response.data.msg, "error");
+            }
+        },
     },
 };
 </script>

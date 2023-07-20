@@ -9,16 +9,29 @@ class UserService
 {
     public static function index()
     {
-        return User::paginate(1);
+        return User::paginate(5);
     }
 
     public static function store($request)
     {
         try {
-            User::create($request);
+            if (User::where("email", $request["email"])->count() > 0) {
+                return Response::failed("Oops, email telah digunakan.");
+            }
+
+            if (User::where("username", $request["username"])->count() > 0) {
+                return Response::failed("Oops, username telah digunakan.");
+            }
+
+            if ($request["password"] != $request["password_confirmation"]) {
+                return Response::failed("Oops, password konfirmasi tidak tepat.");
+            }
+
+            User::create($request->except(['password_confirmation']));
             return Response::success("user baru berhasil dibuat.");
         } catch (\Throwable $th) {
             return Response::failed($th->getMessage());
+            return Response::failed("Oops, sepertinya ada kesalahan server.");
         }
     }
 
