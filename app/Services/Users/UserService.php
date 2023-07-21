@@ -30,14 +30,17 @@ class UserService
             User::create($request->except(['password_confirmation']));
             return Response::success("user baru berhasil dibuat.");
         } catch (\Throwable $th) {
-            return Response::failed($th->getMessage());
             return Response::failed("Oops, sepertinya ada kesalahan server.");
         }
     }
 
     public static function show($id)
     {
-        return User::find($id);
+        try {
+            return User::findOrFail($id);
+        } catch (\Throwable $th) {
+            return Response::failed("data tidak ditemukan.");
+        }
     }
 
     public static function update($request, $id)

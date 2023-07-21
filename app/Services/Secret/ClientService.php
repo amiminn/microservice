@@ -29,7 +29,11 @@ class ClientService
 
     public function show($id)
     {
-        return ClientModel::find($id);
+        try {
+            return ClientModel::findOrFail($id);
+        } catch (\Throwable $th) {
+            return Response::failed("data tidak ditemukan.");
+        }
     }
 
     public function update(Request $request, $id)
