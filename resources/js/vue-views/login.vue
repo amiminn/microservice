@@ -1,19 +1,19 @@
 <template lang="">
     <div
-        class="min-h-screen grid md:lg:grid-cols-5 grid-cols-1 bg-[url('wave.svg')] bg-no-repeat"
+        class="min-h-screen grid sm:lg:grid-cols-5 grid-cols-1 bg-wave bg-no-repeat"
     >
-        <div class="col-span-3">
-            <div class="hidden md:block p-8 px-28 text-white">
+        <div class="hidden sm:block col-span-3">
+            <div class="p-8 px-28 text-white">
                 <div class="card !bg-transparent">
                     <div class="card-body">microservice@amiminn</div>
                 </div>
             </div>
         </div>
-        <div class="col-span-2">
+        <div class="col-span-2 grid content-around">
             <div class="mx-8 text-4xl text-white font-bold font-sans">
                 <span>login</span>
             </div>
-            <div class="-my-10 min-h-screen grid content-center px-5">
+            <div class="px-5">
                 <form class="space-y-4" @submit.prevent="to_login">
                     <label class="label">username</label>
                     <input
@@ -48,6 +48,7 @@
                     </button>
                 </form>
             </div>
+            <div></div>
         </div>
     </div>
 </template>

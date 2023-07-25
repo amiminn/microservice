@@ -13,7 +13,7 @@
             v-if="slotProps.computed.total > slotProps.computed.perPage"
         >
             <button
-                class="relative inline-flex items-center rounded-l border px-2 py-2 text-sm font-medium focus:z-20 disabled:opacity-50 hover:bg-sky-800 hover:text-white"
+                class="relative inline-flex items-center rounded-l border px-2 py-2 text-sm font-medium focus:z-20 disabled:opacity-50 hover:bg-gray-800 hover:text-white"
                 :class="itemClasses"
                 :disabled="!slotProps.computed.prevPageUrl"
                 v-on="slotProps.prevButtonEvents"
@@ -39,7 +39,7 @@
             </button>
 
             <button
-                class="relative inline-flex items-center border px-4 py-2 text-sm font-medium focus:z-20 hover:bg-sky-800 hover:text-white"
+                class="relative inline-flex items-center border px-4 py-2 text-sm font-medium focus:z-20 hover:bg-gray-800 hover:text-white"
                 :class="[
                     page == slotProps.computed.currentPage
                         ? activeClasses
@@ -55,7 +55,7 @@
             </button>
 
             <button
-                class="relative inline-flex items-center rounded-r border px-2 py-2 text-sm font-medium focus:z-20 disabled:opacity-50 hover:bg-sky-800 hover:text-white"
+                class="relative inline-flex items-center rounded-r border px-2 py-2 text-sm font-medium focus:z-20 disabled:opacity-50 hover:bg-gray-800 hover:text-white"
                 :class="itemClasses"
                 :disabled="!slotProps.computed.nextPageUrl"
                 v-on="slotProps.nextButtonEvents"
@@ -123,7 +123,7 @@ export default {
         },
         activeClasses: {
             type: Array,
-            default: () => ["bg-sky-800", "text-white"],
+            default: () => ["bg-gray-800", "text-white"],
         },
     },
 

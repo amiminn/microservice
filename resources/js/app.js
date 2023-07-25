@@ -43,6 +43,10 @@ app.config.globalProperties.$filters = {
     },
 };
 
+app.config.globalProperties.$theme = {
+    dark: "text-gray-50 bg-gray-900 hover:bg-gray-700 hover:text-gray-50",
+};
+
 app.config.globalProperties.$api = {
     client: "/api/client",
     users: "/api/users",

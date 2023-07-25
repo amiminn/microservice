@@ -4,7 +4,7 @@
             <div class="grid grid-cols-2">
                 <namepage @click="getDataUser">Daftar User</namepage>
                 <div class="text-right">
-                    <router-link to="/tambah-user" class="btn btn-sky"
+                    <router-link to="/tambah-user" class="btn btn-dark"
                         >add +</router-link
                     >
                 </div>

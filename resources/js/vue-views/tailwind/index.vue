@@ -1,5 +1,6 @@
 <template lang="">
     <div>
+        <v-transition></v-transition>
         <badge></badge>
         <Button></Button>
         <form-input></form-input>
@@ -15,6 +16,7 @@ import Badge from "./badge.vue";
 import Modal from "./modal.vue";
 import DTable from "./table.vue";
 import Toast from "./toast.vue";
+import VTransition from "./transition.vue";
 export default {
     components: {
         Button,
@@ -23,6 +25,7 @@ export default {
         Modal,
         DTable,
         Toast,
+        VTransition,
     },
 };
 </script>

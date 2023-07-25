@@ -1,7 +1,7 @@
 <template lang="">
     <card>
         <namepage>Client-Sercret</namepage>
-        <router-link to="/create-client" class="btn btn-primary btn-block">
+        <router-link to="/create-client" class="btn btn-dark btn-block">
             new client-secret
         </router-link>
     </card>

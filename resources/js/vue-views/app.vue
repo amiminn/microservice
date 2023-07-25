@@ -5,7 +5,7 @@
                 <header-page></header-page>
                 <side-bar></side-bar>
             </div>
-            <div class="p-4 sm:ml-64 bg-gray-50 min-h-screen">
+            <div class="p-4 sm:ml-64 bg-gray-100 min-h-screen">
                 <div class="mt-14">
                     <router-view />
                 </div>

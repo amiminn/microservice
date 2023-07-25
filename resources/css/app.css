@@ -1,3 +1,9 @@
+.bg-wave {
+    height: 100px; /* to illustrate the space for the content */
+    background: url(wave.svg) top / 100% auto, url(wave-r.svg) bottom/100% auto,
+        linear-gradient(#fff, #fff) content-box; /* Color between the shapes only on the content and not the padding*/
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,7 +23,7 @@
         @apply cursor-not-allowed !text-gray-600;
     }
     .btn {
-        @apply border focus:ring-4 focus:outline-none font-medium rounded text-sm px-8 py-2 text-center mr-2 mb-2;
+        @apply border focus:ring-4 focus:outline-none font-medium rounded text-sm px-8 py-2 text-center mr-2 mb-2 transition;
     }
     .btn-block {
         @apply block w-full;
@@ -75,7 +81,7 @@
         @apply absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1;
     }
     hr {
-        @apply h-px my-2 bg-gray-200 border-0;
+        @apply h-px my-2 bg-gray-300 border-0;
     }
     select {
         @apply cursor-pointer;
@@ -98,7 +104,7 @@
         @apply w-full text-sm text-left text-gray-500;
     }
     .thead {
-        @apply text-xs text-white uppercase bg-sky-800;
+        @apply text-xs text-white uppercase bg-gray-800;
     }
     .tr {
         @apply bg-white border-b;

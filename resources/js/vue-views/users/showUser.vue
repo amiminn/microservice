@@ -140,7 +140,7 @@ export default {
             let url = this.$api.users + "/" + this.$route.params.id;
             let res = await axios.get(url);
             this.dataUser = res.data;
-            console.log(res);
+            // console.log(res);
         },
         async resetUser() {},
     },
