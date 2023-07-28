@@ -19,6 +19,7 @@ Route::prefix('auth')->group(function () {
 });
 
 Route::middleware(['auth:api'])->group(function () {
+    // user login
     Route::post("user", function () {
         return auth()->user();
     });
@@ -29,6 +30,12 @@ Route::middleware(['auth:api'])->group(function () {
         Route::post("update-password", "updatePassword");
     });
 
+    // manage users
+    Route::prefix("users")->group(function () {
+        Route::get("status/{id}", [AuthUserController::class, "updateStatus"]);
+    });
+
+    // manage more info
     Route::apiResources([
         "client" => ClientService::class,
         "users" => UserController::class

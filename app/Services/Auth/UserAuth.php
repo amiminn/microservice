@@ -54,7 +54,16 @@ class UserAuth
             return Response::success("email berhasil diupdate.");
         } catch (\Throwable $th) {
             return Response::failed("Oops, sepertinya ada kesalahan server.");
-            // return Response::failed($th->getMessage());
+        }
+    }
+
+    public static function updateStatus($id)
+    {
+        try {
+            User::findOrFail($id)->active()->save();
+            return Response::success("status berhail diupdate.");
+        } catch (\Throwable $th) {
+            return Response::failed("Oops, sepertinya ada kesalahan server.");
         }
     }
 }

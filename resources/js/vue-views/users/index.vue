@@ -34,10 +34,16 @@
                             <td class="td">
                                 {{ this.$filters.status(data.isActive) }}
                             </td>
-                            <td class="td">
+                            <td class="td flex gap-2">
                                 <router-link :to="'/kelola-user/' + data.id">
                                     <vue-feather type="eye"></vue-feather>
                                 </router-link>
+                                <div
+                                    class="cursor-pointer"
+                                    @click="deleteUser(data.id)"
+                                >
+                                    <vue-feather type="trash-2"></vue-feather>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -85,6 +91,19 @@ export default {
 
         getResult(page) {
             this.loadPage(page);
+        },
+
+        async deleteUser(id) {
+            let del = await hapus();
+            if (del.isConfirmed) {
+                try {
+                    let res = await axios.delete(this.$api.users + "/" + id);
+                    Swal.fire("Deleted!", res.data.msg, "success");
+                    this.getDataUser();
+                } catch (error) {
+                    toast(error.response.data.msg, "error");
+                }
+            }
         },
     },
 };

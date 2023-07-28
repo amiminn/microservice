@@ -9,7 +9,7 @@ class UserService
 {
     public static function index()
     {
-        return User::paginate(5);
+        return User::latest()->paginate(5);
     }
 
     public static function store($request)

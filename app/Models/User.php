@@ -30,7 +30,8 @@ class User extends Authenticatable
 
     public function active()
     {
-        return $this->isActive = !$this->isActive;
+        $this->isActive = !$this->isActive;
+        return $this;
     }
 
     protected static function boot()

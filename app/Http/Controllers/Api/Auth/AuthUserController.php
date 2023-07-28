@@ -22,4 +22,9 @@ class AuthUserController extends Controller
     {
         return UserAuth::updatePassword($request);
     }
+
+    public function updateStatus(Request $request, $id)
+    {
+        return UserAuth::updateStatus($id);
+    }
 }
