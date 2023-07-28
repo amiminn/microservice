@@ -16,6 +16,7 @@
     "dependencies": {
         "@jobinsjp/vue3-datatable": "^1.0.15",
         "@vitejs/plugin-vue": "^4.2.3",
+        "animate.css": "^4.1.1",
         "flowbite": "^1.6.6",
         "laravel-vue-pagination": "^4.1.0",
         "lodash": "^4.17.21",

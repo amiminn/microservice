@@ -40,10 +40,7 @@
                             ></vue-feather>
                         </div>
                     </div>
-                    <button
-                        type="submit"
-                        class="py-3 btn btn-primary btn-block"
-                    >
+                    <button type="submit" class="py-3 btn btn-dark btn-block">
                         login
                     </button>
                 </form>
