@@ -24,14 +24,20 @@
                     >
                         <th class="th">{{ id + 1 }}</th>
                         <th class="td">{{ data.name }}</th>
-                        <td class="td">{{ data.client_id }}</td>
+                        <td class="td select-all">{{ data.client_id }}</td>
                         <td class="td">
                             {{ this.$filters.status(data.status) }}
                         </td>
-                        <td class="td">
+                        <td class="td flex gap-2">
                             <router-link :to="`/client-key/` + data.id">
                                 <vue-feather type="eye"></vue-feather>
                             </router-link>
+                            <div
+                                class="cursor-pointer"
+                                @click="deleteClient(data.id)"
+                            >
+                                <vue-feather type="trash-2"></vue-feather>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -47,6 +53,7 @@
     </card>
 </template>
 <script>
+import axios from "axios";
 import paginate from "../../components/datatable/TailwindPagination.vue";
 export default {
     components: { paginate },
@@ -67,6 +74,19 @@ export default {
                 let res = await axios.get(this.$api.client + "?page=" + page);
                 this.dataClient = res.data;
             } catch (error) {}
+        },
+
+        async deleteClient(id) {
+            let del = await hapus();
+            if (del.isConfirmed) {
+                try {
+                    let res = await axios.delete(this.$api.client + "/" + id);
+                    Swal.fire("Deleted!", res.data.msg, "success");
+                    this.getClient();
+                } catch (error) {
+                    toast(error.response.data.msg, "error");
+                }
+            }
         },
 
         loadPage(page) {

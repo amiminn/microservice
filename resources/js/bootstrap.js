@@ -27,6 +27,18 @@ window.toast = (msg, icon = "success") => {
     });
 };
 
+window.hapus = () => {
+    return Swal.fire({
+        title: "Apakah yakin ingin menghapus?",
+        text: "Data yang terhapus tidak dapat dikembalikan seperti semula!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Ya, Hapus!",
+    });
+};
+
 import axios from "axios";
 import Swal from "sweetalert2";
 window.axios = axios;

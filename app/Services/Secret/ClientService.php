@@ -20,7 +20,7 @@ class ClientService
             return response()->json([
                 "success" => true,
                 "data" => $create,
-                "msg" => "sercret client baru berhasil ditambahkan."
+                "msg" => "client-key baru berhasil ditambahkan."
             ]);
         } catch (\Throwable $th) {
             return Response::error();
@@ -40,7 +40,7 @@ class ClientService
     {
         try {
             ClientModel::find($id)->update(["name" => $request["name"]]);
-            return Response::success("sercret client berhasil diupdate.");
+            return Response::success("client-key berhasil diupdate.");
         } catch (\Throwable $th) {
             return Response::error();
         }
@@ -49,8 +49,8 @@ class ClientService
     public function destroy($id)
     {
         try {
-            ClientModel::whereId($id)->delete();
-            return Response::success("sercret client berhasil dihapus.");
+            ClientModel::findOrFail($id)->delete();
+            return Response::success("client-key berhasil dihapus.");
         } catch (\Throwable $th) {
             return Response::error();
         }
@@ -69,8 +69,8 @@ class ClientService
     public function updateClientStatus($id)
     {
         try {
-            return ClientModel::find($id)->status()->save();
-            return Response::success("status sercret client berhasil diupdate.");
+            ClientModel::find($id)->status()->save();
+            return Response::success("status client-key berhasil diupdate.");
         } catch (\Throwable $th) {
             return Response::error();
         }

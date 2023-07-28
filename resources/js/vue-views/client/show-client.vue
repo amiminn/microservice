@@ -37,10 +37,10 @@
                 <pengingat> Update status client-key </pengingat>
                 <button
                     class="btn btn-block mt-4"
-                    :class="dataClient ? 'btn-success' : 'btn-danger'"
+                    :class="dataClient.status ? 'btn-success' : 'btn-danger'"
                     @click="updateStatusClient"
                 >
-                    {{ dataClient ? "aktif" : "non-aktif" }}
+                    {{ dataClient.status ? "aktif" : "non-aktif" }}
                 </button>
             </card>
         </div>
@@ -61,14 +61,14 @@
                     <input
                         type="text"
                         readonly
-                        class="form-input col-span-2"
+                        class="form-input col-span-2 select-all"
                         v-model="dataClient.client_id"
                     />
                     <span class="label">client-secret</span>
                     <input
                         type="text"
                         readonly
-                        class="form-input col-span-2"
+                        class="form-input col-span-2 select-all"
                         v-model="dataClient.client_secret"
                     />
                 </div>

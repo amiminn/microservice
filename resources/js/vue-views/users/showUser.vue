@@ -115,6 +115,20 @@
                 </card>
             </div>
         </div>
+        <card>
+            <namepage>Hapus akun</namepage>
+            <div class="alert">
+                <pengingat>
+                    akun yang terhapus tidak dapat dikembalikan seperti semula.
+                </pengingat>
+            </div>
+            <button class="btn btn-danger btn-block" @click="deleteUser">
+                <div class="flex align-center justify-center">
+                    <vue-feather type="trash-2"></vue-feather>
+                    <span class="md:lg:text-base ml-2">Hapus</span>
+                </div>
+            </button>
+        </card>
     </div>
 </template>
 <script>
@@ -140,9 +154,14 @@ export default {
             let url = this.$api.users + "/" + this.$route.params.id;
             let res = await axios.get(url);
             this.dataUser = res.data;
-            // console.log(res);
         },
         async resetUser() {},
+        async deleteUser() {
+            let del = await hapus();
+            if (del.isConfirmed) {
+                Swal.fire("Deleted!", "data terhapus", "success");
+            }
+        },
     },
 };
 </script>

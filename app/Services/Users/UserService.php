@@ -55,16 +55,21 @@ class UserService
 
     public static function destroy($id)
     {
-        User::where('id', $id)->delete();
-        return Response::success("data user berhasil terhapus.");
+        try {
+            User::findOrFail($id)->delete();
+            return Response::success("data user berhasil terhapus.");
+        } catch (\Throwable $th) {
+            return Response::error();
+        }
     }
 
     public static function activate($id)
     {
-        $user = User::find($id);
-        $user->active();
-        $user->save();
-
-        return Response::success("status user berhasil diubah.");
+        try {
+            User::findOrFail($id)->active()->save();
+            return Response::success("status user berhasil diubah.");
+        } catch (\Throwable $th) {
+            return Response::error();
+        }
     }
 }
