@@ -59,7 +59,7 @@ class ClientService
     public function updateClientSecret($id)
     {
         try {
-            ClientModel::find($id)->updateClientSecret();
+            ClientModel::find($id)->updateClientSecret()->save();
             return Response::success("client-secret berhasil diupdate.");
         } catch (\Throwable $th) {
             return Response::error();
@@ -69,7 +69,7 @@ class ClientService
     public function updateClientStatus($id)
     {
         try {
-            ClientModel::find($id)->status();
+            return ClientModel::find($id)->status()->save();
             return Response::success("status sercret client berhasil diupdate.");
         } catch (\Throwable $th) {
             return Response::error();

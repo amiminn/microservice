@@ -78,12 +78,12 @@ export default {
     },
 
     mounted() {
-        this.help.map((d) => {
-            let x = "child" in d ? d.child : false;
-            if (x) {
-                x.map((d) => console.log(d.id));
-            }
-        });
+        // this.help.map((d) => {
+        //     let x = "child" in d ? d.child : false;
+        //     if (x) {
+        //         x.map((d) => console.log(d.id));
+        //     }
+        // });
     },
 };
 </script>

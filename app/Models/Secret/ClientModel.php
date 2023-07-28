@@ -18,12 +18,14 @@ class ClientModel extends Model
 
     public function status()
     {
-        return $this->status = !$this->status;
+        $this->status = !$this->status;
+        return $this;
     }
 
     public function updateClientSecret()
     {
-        return $this->status = Response::random(60);
+        $this->client_secret = Response::random(60);
+        return $this;
     }
 
     protected static function boot()
