@@ -6,6 +6,8 @@
 import "flowbite";
 import "animate.css";
 
+import Swal from "sweetalert2";
+window.Swal = Swal;
 window.toast = (msg, icon = "success") => {
     const Toast = Swal.mixin({
         toast: true,
@@ -37,15 +39,6 @@ window.hapus = () => {
     });
 };
 
-import axios from "axios";
-import Swal from "sweetalert2";
-window.axios = axios;
-
-window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
-window.axios.defaults.headers.common["X-CSRF-TOKEN"] = window.Laravel.csrfToken;
-window.axios.defaults.headers.common["Authorization"] =
-    "Bearer " + localStorage.getItem("_x");
-
 window.getUser = async function () {
     let res = await axios.post("/api/user");
     window.user = res.data;
@@ -67,3 +60,18 @@ import enc from "crypto-js/enc-utf8";
 window.decryptData = (data) => {
     return AES.decrypt(data, "_x").toString(enc);
 };
+
+import axios from "axios";
+window.axios = axios;
+
+try {
+    let token = JSON.parse(decryptData(jsc.get("_x")));
+    window.axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+    window.user = JSON.parse(decryptData(jsc.get("_u")));
+    window.isAuth = true;
+} catch (error) {
+    window.isAuth = false;
+}
+
+window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+window.axios.defaults.headers.common["X-CSRF-TOKEN"] = window.Laravel.csrfToken;

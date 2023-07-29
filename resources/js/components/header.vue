@@ -115,12 +115,7 @@ export default {
     },
     methods: {
         logout() {
-            if (localStorage.getItem("_x")) {
-                localStorage.removeItem("_x");
-            } else {
-            }
-
-            window.location = "logout";
+            this.$store.commit("logout");
         },
 
         todashboard() {

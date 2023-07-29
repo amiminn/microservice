@@ -8,12 +8,6 @@
     @include('components.import')
 </head>
 
-<body id="app">
-    @auth
-    <main-app></main-app>
-    @else
-    <router-view />
-    @endauth
-</body>
+<body id="app"></body>
 
 </html>

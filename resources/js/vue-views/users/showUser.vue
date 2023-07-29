@@ -211,6 +211,21 @@ export default {
                 toast(error.response.data.msg);
             }
         },
+
+        async deleteUser() {
+            let del = await hapus();
+            if (del.isConfirmed) {
+                try {
+                    let res = await axios.delete(
+                        this.$api.users + "/" + this.$route.params.id
+                    );
+                    Swal.fire("Deleted!", res.data.msg, "success");
+                    this.$router.go(-1);
+                } catch (error) {
+                    toast(error.response.data.msg, "error");
+                }
+            }
+        },
     },
 };
 </script>

@@ -63,12 +63,8 @@ export default {
     methods: {
         async to_login() {
             try {
-                let res = await axios.post("login", this.form);
-                toast(res.data.msg);
-                window.location = "/dashboard";
-            } catch (error) {
-                toast(error.response.data.msg, "error");
-            }
+                this.$store.commit("login", this.form);
+            } catch (error) {}
         },
         on() {
             this.showPw = !this.showPw;

@@ -2,10 +2,6 @@
     <div>
         <card>
             <namepage>Dahsboard</namepage>
-            {{ this.$store.state.settings.count }}
-            <button @click="console.log(this.$store)" class="btn btn-danger">
-                +
-            </button>
         </card>
         <div class="grid grid-cols-2 md:lg:grid-cols-4 gap-3">
             <card>2 total user</card>

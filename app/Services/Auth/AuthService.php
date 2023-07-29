@@ -14,10 +14,8 @@ class AuthService
             if (Auth::attempt(['username' => $request['username'], 'password' => $request['password'], 'isActive' => 1])) {
                 $user = Auth::user();
                 $token = $user->createToken('authToken')->accessToken;
-
                 session(['token' => $token]);
-                // return $token;
-                return Response::success("login berhasil.");
+                return compact("user", "token");
             }
 
             return Response::failed("Oops, ada kesalahan username atau password.");

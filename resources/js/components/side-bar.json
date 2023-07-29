@@ -3,36 +3,49 @@
         "path": "/dashboard",
         "name": "dashboard",
         "logo": "command",
-        "sp": "2"
+        "sp": 2,
+        "isAdmin": false
     },
     {
         "path": "/tailwind",
         "name": "tailwind-component",
         "logo": "box",
-        "sp": ""
+        "sp": "",
+        "isAdmin": false
     },
     {
         "path": "/client",
         "name": "client",
         "logo": "key",
-        "sp": ""
-    },
-    {
-        "path": "/kelola-user",
-        "name": "users",
-        "logo": "users",
-        "sp": ""
+        "sp": "",
+        "isAdmin": true
     },
     {
         "path": "/vue-x",
         "name": "VueX",
         "logo": "package",
-        "sp": ""
+        "sp": "",
+        "isAdmin": false
+    },
+    {
+        "path": "/kelola-user",
+        "name": "users",
+        "logo": "users",
+        "sp": "",
+        "isAdmin": true
     },
     {
         "path": "/notfound",
         "name": "not-found",
         "logo": "lock",
-        "sp": ""
+        "sp": "",
+        "isAdmin": true
+    },
+    {
+        "path": "/docs",
+        "name": "API Docs",
+        "logo": "code",
+        "sp": "",
+        "isAdmin": true
     }
 ]

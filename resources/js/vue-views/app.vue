@@ -2,7 +2,7 @@
     <div>
         <div v-if="afterAuth">
             <div>
-                <header-page></header-page>
+                <HeaderPage />
                 <side-bar></side-bar>
             </div>
             <div class="p-4 sm:ml-64 bg-gray-100 min-h-screen">
@@ -26,8 +26,15 @@ export default {
     },
     data() {
         return {
-            afterAuth: true,
+            afterAuth: null,
         };
+    },
+    mounted() {
+        if (isAuth) {
+            this.afterAuth = true;
+        } else {
+            this.afterAuth = false;
+        }
     },
 };
 </script>

@@ -9,7 +9,7 @@
                 class="h-full px-3 pb-4 overflow-y-auto no-scrollbar text-gray-400 bg-gray-900"
             >
                 <ul class="space-y-2 font-medium">
-                    <li v-for="page in pages">
+                    <li v-for="page in isUser">
                         <router-link
                             :to="page.path"
                             class="item-list"
@@ -26,7 +26,28 @@
                         </router-link>
                     </li>
                 </ul>
-                <!-- <hr />
+                <div v-if="isRole">
+                    <hr />
+                    <ul class="space-y-2 font-medium">
+                        <li v-for="page in isAdmin">
+                            <router-link
+                                :to="page.path"
+                                class="item-list"
+                                :class="this.$theme.dark"
+                            >
+                                <vue-feather :type="page.logo"></vue-feather>
+                                <span class="flex-1 ml-3 whitespace-nowrap">
+                                    {{ page.name }}
+                                </span>
+
+                                <span v-if="page.sp" class="attribute-list">
+                                    {{ page.sp }}
+                                </span>
+                            </router-link>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 
                 <ul class="space-y-2 font-medium">
                     <li>
                         <div :class="this.$theme.dark" to="/" class="item-list">
@@ -54,36 +75,37 @@ import side from "./side-bar.json";
 export default {
     data() {
         return {
-            pages: side,
-            help: [
-                {
-                    id: 1,
-                },
-                {
-                    id: 2,
-                    child: [
-                        {
-                            id: 11,
-                        },
-                        {
-                            id: 12,
-                        },
-                        {
-                            id: 13,
-                        },
-                    ],
-                },
-            ],
+            isUser: [],
+            isAdmin: [],
+            isRole: false,
         };
     },
 
+    methods: {
+        loadSideBar() {
+            this.isAdmin = side
+                .map((d) => {
+                    if (d.isAdmin) {
+                        return d;
+                    }
+                })
+                .filter((d) => d);
+
+            this.isUser = side
+                .map((d) => {
+                    if (!d.isAdmin) {
+                        return d;
+                    }
+                })
+                .filter((d) => d);
+        },
+    },
+
     mounted() {
-        // this.help.map((d) => {
-        //     let x = "child" in d ? d.child : false;
-        //     if (x) {
-        //         x.map((d) => console.log(d.id));
-        //     }
-        // });
+        if (user.isAdmin) {
+            this.isRole = true;
+        }
+        this.loadSideBar();
     },
 };
 </script>
@@ -92,10 +114,10 @@ export default {
 @layer components {
     .router-link-active,
     .router-link-exact-active {
-        @apply !text-gray-50 !bg-gray-700;
+        @apply !text-gray-50 !bg-gray-700 border-l-4 border-white;
     }
     .item-list {
-        @apply flex items-center mb-1 p-2 rounded-md;
+        @apply flex items-center mb-1 p-2 rounded;
     }
     .attribute-list {
         @apply inline-flex items-center justify-center w-3 h-3 px-5 py-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-lg;

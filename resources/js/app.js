@@ -10,11 +10,7 @@ import Pengingat from "./components/inc/pengingat.vue";
 import Kembali from "./components/inc/kembali.vue";
 import MainApp from "./vue-views/app.vue";
 
-const app = createApp({
-    components: {
-        MainApp,
-    },
-});
+const app = createApp(MainApp);
 
 app.component(VueFeather.name, VueFeather);
 app.component("card", Card);
