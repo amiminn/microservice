@@ -24,6 +24,12 @@
         "sp": ""
     },
     {
+        "path": "/vue-x",
+        "name": "VueX",
+        "logo": "package",
+        "sp": ""
+    },
+    {
         "path": "/notfound",
         "name": "not-found",
         "logo": "lock",

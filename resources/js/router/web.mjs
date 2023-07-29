@@ -69,6 +69,12 @@ export default [
         meta: { auth: true },
     },
     {
+        path: "/vue-x",
+        name: "vue-x",
+        component: () => import("../vue-views/vue/index.vue"),
+        meta: { auth: true },
+    },
+    {
         path: "/:catchAll(.*)",
         name: "404 - not found",
         component: () => import("../components/404.vue"),
