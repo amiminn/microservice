@@ -2,7 +2,7 @@ export default [
     {
         path: "/",
         name: "home",
-        component: () => import("../vue-views/index.vue"),
+        component: () => import("../vue-views/main/index.vue"),
         meta: { auth: false },
     },
     {
