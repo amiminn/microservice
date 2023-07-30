@@ -9,6 +9,7 @@
             <button @click="increment" class="btn">+</button>
         </div>
         <button @click="settime" class="mt-4 btn">setTime</button>
+        <button @click="getUserLogin" class="mt-4 btn">getUser</button>
     </card>
 </template>
 <script>
@@ -24,6 +25,9 @@ export default {
             setTimeout(() => {
                 console.log("ok");
             }, 5000);
+        },
+        getUserLogin() {
+            refreshUser();
         },
     },
 };

@@ -3,10 +3,13 @@
         <card>
             <namepage>Transition</namepage>
             <button @click="open = !open" class="btn btn-danger">toggle</button>
-            <Transition>
-                <card v-if="open">content</card>
-            </Transition>
         </card>
+        <Transition
+            enter-active-class="animate__animated animate__zoomIn animate__faster"
+            leave-active-class="animate__animated animate__zoomOut animate__faster"
+        >
+            <card v-if="open">content</card>
+        </Transition>
     </div>
 </template>
 <script>
@@ -23,12 +26,12 @@ export default {
 @layer components {
     .v-enter-active,
     .v-leave-active {
-        @apply transition scale-y-0;
+        /* @apply animate__animated animate__slideInDown; */
     }
 
     .v-enter-from,
     .v-leave-to {
-        /* @apply ease-out; */
+        /* @apply animate__animated animate__slideOutDown; */
     }
 }
 </style>

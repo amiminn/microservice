@@ -17,18 +17,18 @@ class ClientMiddleware
         $client = ClientModel::where(['client_id' => $client_id, 'client_secret' => $client_secret]);
         if ($client->count() > 0) {
             if ($client->first()->status == 1) {
-                // $request->merge(["client" => $client->first()]);
+                $request->merge(["client" => $client->first()]);
                 return $next($request);
             } else {
                 return response()->json([
                     'success' => false,
-                    'msg' => 'status client secret non-active.'
+                    'msg' => 'status client-key non-active.'
                 ], 400);
             }
         } else {
             return response()->json([
                 'success' => false,
-                'msg' => 'client secret tidak ditemukan.'
+                'msg' => 'client-key tidak ditemukan.'
             ], 400);
         }
     }

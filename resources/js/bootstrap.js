@@ -8,7 +8,17 @@ import "animate.css";
 
 import Swal from "sweetalert2";
 window.Swal = Swal;
-window.toast = (msg, icon = "success") => {
+
+import JsCookie from "js-cookie";
+window.jsc = JsCookie;
+
+import AES from "crypto-js/aes";
+import enc from "crypto-js/enc-utf8";
+
+import axios from "axios";
+window.axios = axios;
+
+window.toast = function (msg, icon = "success") {
     const Toast = Swal.mixin({
         toast: true,
         position: "top-end",
@@ -27,7 +37,7 @@ window.toast = (msg, icon = "success") => {
     });
 };
 
-window.hapus = () => {
+window.hapus = function () {
     return Swal.fire({
         title: "Apakah yakin ingin menghapus?",
         text: "Data yang terhapus tidak dapat dikembalikan seperti semula!",
@@ -39,30 +49,17 @@ window.hapus = () => {
     });
 };
 
-window.getUser = async function () {
-    let res = await axios.post("/api/user");
-    window.user = res.data;
-};
-
-import JsCookie from "js-cookie";
-window.jsc = JsCookie;
-
-import AES from "crypto-js/aes";
-window.encryptData = (data) => {
+window.encryptData = function (data) {
     try {
-        return AES.encrypt(data, "_x").toString();
+        return AES.encrypt(data, window.Laravel.app_key).toString();
     } catch (error) {
         console.error("harap ubah json ke string");
     }
 };
 
-import enc from "crypto-js/enc-utf8";
-window.decryptData = (data) => {
-    return AES.decrypt(data, "_x").toString(enc);
+window.decryptData = function (data) {
+    return AES.decrypt(data, window.Laravel.app_key).toString(enc);
 };
-
-import axios from "axios";
-window.axios = axios;
 
 try {
     let token = JSON.parse(decryptData(jsc.get("_x")));
@@ -75,3 +72,10 @@ try {
 
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 window.axios.defaults.headers.common["X-CSRF-TOKEN"] = window.Laravel.csrfToken;
+
+window.refreshUser = async function () {
+    let res = await axios.post("/api/user");
+    jsc.set("_u", encryptData(JSON.stringify(res.data)), {
+        expires: 1,
+    });
+};
