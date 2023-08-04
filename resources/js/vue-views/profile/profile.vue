@@ -24,9 +24,12 @@
                             @input="modelAvatar"
                         />
                     </div>
-                    <button type="submit" class="btn btn-block btn-primary">
+                    <!-- <button type="submit" class="btn btn-block btn-primary">
                         update
-                    </button>
+                    </button> -->
+                    <div class="alert">
+                        <pengingat> fitur belum tersedia. </pengingat>
+                    </div>
                 </form>
             </card>
             <card class="col-auto">
@@ -39,6 +42,14 @@
                             type="text"
                             class="form-input"
                             v-model="formUser.name"
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <label>phone</label>
+                        <input
+                            type="text"
+                            class="form-input"
+                            v-model="formUser.phone"
                         />
                     </div>
                     <button type="submit" class="btn btn-block btn-primary">
@@ -72,8 +83,9 @@ export default {
             try {
                 let res = await axios.post("/api/update-profile", {
                     name: this.formUser.name,
+                    phone: this.formUser.phone,
                 });
-                getUser();
+                refreshUser();
                 toast(res.data.msg);
             } catch (error) {
                 toast(error.response.data.msg, "error");
@@ -97,7 +109,7 @@ export default {
     },
     mounted() {
         this.formUser = user;
-        this.preview = user.avatar;
+        this.preview = user.avatar ?? "default.jpg";
     },
 };
 </script>

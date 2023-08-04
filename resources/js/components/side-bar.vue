@@ -47,25 +47,6 @@
                         </li>
                     </ul>
                 </div>
-                <!-- 
-                <ul class="space-y-2 font-medium">
-                    <li>
-                        <div :class="this.$theme.dark" to="/" class="item-list">
-                            e-commerce
-                        </div>
-                        <ul class="py-2 space-y-2">
-                            <li>
-                                <a class="!pl-11 item-list">Products</a>
-                            </li>
-                            <li>
-                                <a class="!pl-11 item-list">Billing</a>
-                            </li>
-                            <li>
-                                <a class="!pl-11 item-list">Invoice</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul> -->
             </div>
         </aside>
     </div>

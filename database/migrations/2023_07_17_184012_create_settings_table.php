@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('nama_app')->nullable();
             $table->string('email')->nullable();
             $table->string('logo')->nullable();
+            $table->string('ip')->nullable();
+            $table->text('map')->nullable();
             $table->json('detail')->nullable();
             $table->timestamps();
         });

@@ -13,7 +13,8 @@ class UserAuth
     {
         try {
             User::find(Response::user()->id)->update([
-                "name" => $request["name"]
+                "name" => $request["name"],
+                "phone" => $request["phone"],
             ]);
             return Response::success("profile berhasil diupdate.");
         } catch (\Throwable $th) {

@@ -58,7 +58,7 @@ class AuthService
         } catch (\Throwable $th) {
         }
         Auth::logout();
-        return redirect()->to("login");
+        return redirect("/");
     }
 
     public static function resetPassword($request)

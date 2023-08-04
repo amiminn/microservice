@@ -24,6 +24,12 @@ export default [
         meta: { auth: true },
     },
     {
+        path: "/setting",
+        name: "setting",
+        component: () => import("../vue-views/setting/index.vue"),
+        meta: { auth: true },
+    },
+    {
         path: "/client",
         name: "client",
         component: () => import("../vue-views/client/client.vue"),

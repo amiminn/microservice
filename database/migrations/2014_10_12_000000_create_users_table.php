@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('email')->nullable();
             $table->string('password');
+            $table->string('phone')->nullable();
             $table->string('avatar')->nullable();
             $table->boolean('role')->default(0);
             $table->boolean('isAdmin')->default(0);

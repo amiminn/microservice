@@ -35,6 +35,13 @@
         "isAdmin": true
     },
     {
+        "path": "/setting",
+        "name": "setting",
+        "logo": "settings",
+        "sp": "",
+        "isAdmin": true
+    },
+    {
         "path": "/notfound",
         "name": "not-found",
         "logo": "lock",

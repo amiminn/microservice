@@ -10,8 +10,8 @@
             <div>
                 <router-link
                     to="/login"
-                    class="btn !rounded-full !text-white border-white !hover:text-gray-900 !hover:bg-white !hover:border-black"
-                    >login</router-link
+                    class="px-6 py-1 rounded-full text-white border-2 border-white hover:text-gray-900 hover:bg-white hover:font-bold"
+                    >Login</router-link
                 >
             </div>
         </nav>

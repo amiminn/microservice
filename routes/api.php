@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\Auth\AuthContoller;
 use App\Http\Controllers\Api\Auth\AuthUserController;
+use App\Http\Controllers\Api\SettingApp;
 use App\Http\Controllers\Api\Users\UserController;
 use App\Services\Secret\ClientService;
 use Illuminate\Http\Request;
@@ -40,6 +41,8 @@ Route::middleware(['auth:api'])->group(function () {
         "client" => ClientService::class,
         "users" => UserController::class
     ]);
+
+    Route::apiResource("setting", SettingApp::class)->only(['store', 'index']);
 
     Route::prefix("client")->group(function () {
         Route::get('reset-client/{id}', [ClientService::class, 'updateClientSecret']);

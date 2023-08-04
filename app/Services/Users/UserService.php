@@ -30,7 +30,7 @@ class UserService
             User::create($request->except(['password_confirmation']));
             return Response::success("user baru berhasil dibuat.");
         } catch (\Throwable $th) {
-            return Response::failed("Oops, sepertinya ada kesalahan server.");
+            return Response::error(500);
         }
     }
 
@@ -49,7 +49,7 @@ class UserService
             User::where('id', $id)->update($request);
             return Response::success("data user berhasil terupdate.");
         } catch (\Throwable $th) {
-            return Response::failed($th->getMessage());
+            return Response::error();
         }
     }
 

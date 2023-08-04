@@ -35,6 +35,15 @@
                             />
                         </div>
                         <div class="mb-3">
+                            <span class="label">phone</span>
+                            <input
+                                type="text"
+                                class="form-input"
+                                placeholder="phone number"
+                                v-model="dataUser.phone"
+                            />
+                        </div>
+                        <div class="mb-3">
                             <span class="label">role?</span>
                             <select class="form-input" v-model="dataUser.role">
                                 <option value="0">user</option>
@@ -153,6 +162,7 @@ export default {
                 role: null,
                 isActive: null,
                 isAdmin: null,
+                phone: null,
             },
             urlApi: null,
         };

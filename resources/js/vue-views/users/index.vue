@@ -1,14 +1,24 @@
 <template lang="">
     <div>
         <card>
-            <div class="grid grid-cols-2">
+            <div class="flex justify-between">
                 <namepage @click="getDataUser">Daftar User</namepage>
-                <div class="text-right">
-                    <router-link to="/tambah-user" class="btn btn-dark"
-                        >add +</router-link
-                    >
+                <div>
+                    <vue-feather
+                        @click="menu = !menu"
+                        :type="menu ? 'x' : 'align-right'"
+                        class="cursor-pointer"
+                    ></vue-feather>
                 </div>
             </div>
+            <v-transition>
+                <router-link
+                    to="/tambah-user"
+                    class="btn btn-dark btn-block"
+                    v-if="menu"
+                    >add +</router-link
+                >
+            </v-transition>
         </card>
         <card>
             <div class="table-container">
@@ -60,6 +70,7 @@ export default {
     components: { paginate },
     data() {
         return {
+            menu: false,
             dataUser: [],
         };
     },

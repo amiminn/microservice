@@ -9,6 +9,7 @@ import Namepage from "./components/inc/namepage.vue";
 import Pengingat from "./components/inc/pengingat.vue";
 import Kembali from "./components/inc/kembali.vue";
 import MainApp from "./vue-views/app.vue";
+import VT from "./components/inc/transition.vue";
 
 const app = createApp(MainApp);
 
@@ -18,6 +19,7 @@ app.component("platform", platform);
 app.component("namepage", Namepage);
 app.component("pengingat", Pengingat);
 app.component("kembali", Kembali);
+app.component("VTransition", VT);
 
 app.use(router);
 app.use(store);
@@ -46,6 +48,7 @@ app.config.globalProperties.$theme = {
 app.config.globalProperties.$api = {
     client: "/api/client",
     users: "/api/users",
+    setting: "/api/setting",
 };
 
 app.mount("#app");

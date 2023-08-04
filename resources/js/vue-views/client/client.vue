@@ -1,9 +1,24 @@
 <template lang="">
     <card>
-        <namepage>Client-Sercret</namepage>
-        <router-link to="/create-client" class="btn btn-dark btn-block">
-            new client-secret
-        </router-link>
+        <div class="flex justify-between">
+            <namepage>Client-Sercret</namepage>
+            <div>
+                <vue-feather
+                    @click="menu = !menu"
+                    :type="menu ? 'x' : 'align-right'"
+                    class="cursor-pointer"
+                ></vue-feather>
+            </div>
+        </div>
+        <v-transition>
+            <router-link
+                v-if="menu"
+                to="/create-client"
+                class="btn btn-dark btn-block"
+            >
+                new client-secret
+            </router-link>
+        </v-transition>
     </card>
     <card>
         <div class="table-container">
@@ -12,7 +27,7 @@
                     <tr>
                         <th class="th">#</th>
                         <th class="th">Name</th>
-                        <th class="th">Clien-ID</th>
+                        <th class="th">Client-ID</th>
                         <th class="th">status</th>
                         <th class="th">action</th>
                     </tr>
@@ -59,6 +74,7 @@ export default {
     components: { paginate },
     data() {
         return {
+            menu: false,
             dataClient: [],
             queryUrlIfExist: "",
         };

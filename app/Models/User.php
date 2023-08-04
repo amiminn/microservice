@@ -34,6 +34,11 @@ class User extends Authenticatable
         return $this;
     }
 
+    public function setAvatarAttribute($value)
+    {
+        $this->attributes['avatar'] = $value ?? 'default.jpg';
+    }
+
     protected static function boot()
     {
         parent::boot();
@@ -41,7 +46,6 @@ class User extends Authenticatable
         static::creating(function ($model) {
             $model->id = Response::epoch();
             $model->token = Response::random(60);
-            $model->avatar = Response::url('/default.jpg');
         });
     }
 }

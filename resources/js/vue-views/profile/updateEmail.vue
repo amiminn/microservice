@@ -43,7 +43,7 @@ export default {
                 let res = await axios.post("/api/update-email", {
                     email: this.formUser.email,
                 });
-                getUser();
+                refreshUser();
                 toast(res.data.msg);
             } catch (error) {
                 toast(error.response.data.msg, "error");
