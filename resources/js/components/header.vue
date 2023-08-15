@@ -20,7 +20,13 @@
                             @click="todashboard"
                             class="flex ml-2 md:mr-24 text-white cursor-pointer"
                         >
-                            <div class="h-8 mr-3 text-2xl">🌱</div>
+                            <div class="h-8 mr-3 text-2xl">
+                                <img
+                                    src="/assets/icons/paint.png"
+                                    alt="main logo"
+                                    width="32"
+                                />
+                            </div>
                             <span
                                 class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap"
                             >

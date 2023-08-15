@@ -10,11 +10,13 @@ import Pengingat from "./components/inc/pengingat.vue";
 import Kembali from "./components/inc/kembali.vue";
 import MainApp from "./vue-views/app.vue";
 import VT from "./components/inc/transition.vue";
+import DCard from "./components/inc/dcard.vue";
 
 const app = createApp(MainApp);
 
 app.component(VueFeather.name, VueFeather);
 app.component("card", Card);
+app.component("dcard", DCard);
 app.component("platform", platform);
 app.component("namepage", Namepage);
 app.component("pengingat", Pengingat);
