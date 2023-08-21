@@ -35,6 +35,13 @@
         "isAdmin": true
     },
     {
+        "path": "/whatsapp-api",
+        "name": "api whatsapp",
+        "logo": "phone",
+        "sp": "",
+        "isAdmin": false
+    },
+    {
         "path": "/setting",
         "name": "setting",
         "logo": "settings",

@@ -57,6 +57,13 @@ export default [
         meta: { auth: true },
     },
     {
+        path: "/whatsapp-api",
+        name: "whatsapp-api",
+        meta: { auth: true },
+        component: () => import("../vue-views/whatsapp/index.vue"),
+        meta: { auth: true },
+    },
+    {
         path: "/kelola-user",
         name: "users",
         component: () => import("../vue-views/users/index.vue"),
