@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\Auth\AuthContoller;
 use App\Http\Controllers\Api\Auth\AuthUserController;
+use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\SettingApp;
 use App\Http\Controllers\Api\Users\UserController;
 use App\Services\Secret\ClientService;
@@ -24,6 +25,8 @@ Route::middleware(['auth:api'])->group(function () {
     Route::post("user", function () {
         return auth()->user();
     });
+
+    Route::get("dashboard", [DashboardController::class, "index"]);
 
     Route::controller(AuthUserController::class)->group(function () {
         Route::post("update-profile", "updateProfile");
